@@ -155,7 +155,11 @@ brew install ghostscript
 
 echo 'Install powerline-status'
 echo '------------------------'
-pip3 install --user powerline-status
+pip3 install powerline-status
+
+echo 'Install powerline-gitstatus'
+echo '---------------------------'
+pip3 install powerline-gitstatus
 
 echo 'Install blackfire (agent and probes)'
 echo '------------------------------------'
