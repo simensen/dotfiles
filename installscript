@@ -110,6 +110,10 @@ echo 'Install ext-redis'
 echo '-----------------'
 pecl install redis
 
+echo 'Install ext-amqp'
+echo '-----------------'
+pecl install amqp
+
 echo 'Install laravel envoy'
 echo '---------------------'
 composer global require "laravel/envoy=~1.0"
