@@ -166,6 +166,10 @@ echo '------------------------------------'
 brew tap blackfireio/homebrew-blackfire
 brew install blackfire-agent blackfire-php70 blackfire-php71 blackfire-php72
 
+echo 'Install Fira Code and Mono for Powerline'
+brew install homebrew/cask-fonts/font-fira-code
+brew install homebrew/cask-fonts/font-fira-mono-for-powerline
+
 echo 'Install mackup'
 echo '--------------'
 brew install mackup
