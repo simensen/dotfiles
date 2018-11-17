@@ -1,0 +1,39 @@
+# PHP
+alias phpunit="vendor/bin/phpunit"
+alias phpunitw="phpunit-watcher watch"
+alias c="composer"
+alias cu="composer update"
+alias cr="composer require"
+alias ci="composer install"
+alias cda="composer dump-autoload -o"
+alias p="phpunit"
+alias pf="phpunit --filter "
+alias sshconfig="vi ~/.ssh/config"
+alias copykey='command cat ~/.ssh/id_rsa.public | pbcopy'
+
+# Tool replacements
+alias cat=bat
+alias ping='prettyping --nolegend'
+alias man=tldr
+
+# JavaScript
+alias jest="./node_modules/.bin/jest"
+
+# List all files colorized in long format
+alias l="ls -laF"
+
+# PhPStorm
+alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
+
+# VSCode
+alias code='open -a "/Applications/Visual Studio Code.app" "`pwd`"'
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Flush Directory Service cache
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
