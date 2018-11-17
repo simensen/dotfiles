@@ -10,6 +10,8 @@ git config --global core.excludesfile $HOME/.gitignore-global
 # Symlink the Mackup config
 ln -sf $HOME/.dotfiles/macos/.mackup.cfg $HOME/.mackup.cfg
 
+ln -sf $HOME/.dotfiles/macos/.mackup $HOME/.mackup
+
 pushd $HOME/.dotfiles
 
 echo 'Install composer'
@@ -150,6 +152,10 @@ brew install yarn
 echo 'Install ghostscript'
 echo '-------------------'
 brew install ghostscript
+
+echo 'Install powerline-status'
+echo '------------------------'
+pip3 install --user powerline-status
 
 echo 'Install blackfire (agent and probes)'
 echo '------------------------------------'
