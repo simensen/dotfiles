@@ -11,7 +11,7 @@ ln -sf $HOME/.dotfiles/macos/.mackup.cfg $HOME/.mackup.cfg
 ln -sf $HOME/.dotfiles/macos/.mackup $HOME/.mackup
 
 ln -sf $HOME/.dotfiles/shell/.bash_profile $HOME/.bash_profile
-ln -sf $HOME/.dotfiles/shell/.bash_profile $HOME/.bashrc
+ln -sf $HOME/.dotfiles/shell/.bashrc $HOME/.bashrc
 
 pushd $HOME/.dotfiles
 
