@@ -4,7 +4,7 @@ for file in ~/.dotfiles/shell/.{exports,aliases,functions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
-for file in ~/.dotfiles-custom/shell/.{exports,aliases,functions,zshrc}; do
+for file in ~/.dotfiles-custom/shell/.{exports,aliases,functions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
@@ -14,5 +14,41 @@ powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 source /usr/local/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
+
+#
+# Adjust PATH
+#
+
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.dotfiles/bin:$PATH"
+
+#
+# Magento Cloud
+#
+
+export PATH="~/.magento-cloud/bin:$PATH"
+if [ -f ~/.magento-cloud/shell-config.rc ]; then . ~/.magento-cloud/shell-config.rc; fi
+
+#
+# Symfony
+#
+
+export PATH="~/.symfony/bin:$PATH"
+if [ -f ~/.symfony/shell-config.rc ]; then . ~/.symfony/shell-config.rc; fi
+
+complete -C "/Users/simensen/.symfony/bin/symfony self:autocomplete" symfony
+
+#
+# phpbrew
+#
+
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+
+#
+# Misc
+#
+
+# Import ssh keys in keychain
+ssh-add -A 2>/dev/null;
 
 [ -r "~/.profile" ] && source ~/.profile
