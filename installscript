@@ -3,9 +3,7 @@
 # Hide "last login" line when starting a new terminal session
 touch $HOME/.hushlogin
 
-# Add global gitignore
-ln -sf $HOME/.dotfiles/shell/.gitignore-global $HOME/.gitignore-global
-git config --global core.excludesfile $HOME/.gitignore-global
+mkdir -p ~/.config
 
 # Symlink the Mackup config
 ln -sf $HOME/.dotfiles/macos/.mackup.cfg $HOME/.mackup.cfg
