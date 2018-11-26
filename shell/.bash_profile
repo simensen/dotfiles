@@ -23,6 +23,12 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.dotfiles/bin:$PATH"
 
 #
+# enable bash completion
+#
+
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+#
 # Magento Cloud
 #
 
@@ -52,3 +58,4 @@ complete -C "/Users/simensen/.symfony/bin/symfony self:autocomplete" symfony
 ssh-add -A 2>/dev/null;
 
 [ -r "~/.profile" ] && source ~/.profile
+
