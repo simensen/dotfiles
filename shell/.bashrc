@@ -6,6 +6,12 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.dotfiles/bin:$PATH"
 
 #
+# enable bash completion
+#
+
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+#
 # Magento Cloud
 #
 

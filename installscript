@@ -42,6 +42,14 @@ echo install homebrew
 sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+echo 'Install git'
+echo '-----------'
+brew install git
+
+echo 'Install bash-completion'
+echo '-----------------------'
+brew install bash-completion
+
 echo 'Install node'
 echo '-----------'
 brew install node
