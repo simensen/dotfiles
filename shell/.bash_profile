@@ -51,6 +51,12 @@ complete -C "/Users/simensen/.symfony/bin/symfony self:autocomplete" symfony
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
 #
+# Ruby
+#
+
+export PATH="/usr/local/opt/ruby/bin:/usr/local/opt/ruby/libexec/gembin:$PATH"
+
+#
 # Misc
 #
 

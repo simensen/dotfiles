@@ -54,6 +54,10 @@ echo 'Install node'
 echo '-----------'
 brew install node
 
+echo 'Install ruby'
+echo '------------'
+brew install ruby
+
 echo 'Install bat'
 echo '-----------'
 brew install bat
