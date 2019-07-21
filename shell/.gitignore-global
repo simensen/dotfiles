@@ -12,6 +12,9 @@ Thumbs.db
 
 # PhpStorm
 .idea
+_ide_helper.php
+_ide_helper_models.php
+.phpstorm.meta.php
 
 # vs code
 .vscode
@@ -24,3 +27,6 @@ node_modules
 npm-debug.log
 yarn-error.log
 .phpunit-watcher-cache.php
+
+# phpunit
+.phpunit.result.cache

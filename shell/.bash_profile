@@ -19,8 +19,11 @@ source /usr/local/lib/python3.7/site-packages/powerline/bindings/bash/powerline.
 # Adjust PATH
 #
 
+export PATH="bin:$PATH"
+export PATH="vendor/bin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$PATH:$HOME/.rvm/bin"
 
 #
 # enable bash completion
@@ -65,3 +68,11 @@ ssh-add -A 2>/dev/null;
 
 [ -r "~/.profile" ] && source ~/.profile
 
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/simensen/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/simensen/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/simensen/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/simensen/Downloads/google-cloud-sdk/completion.bash.inc'; fi

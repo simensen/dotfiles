@@ -1,5 +1,4 @@
 # PHP
-alias phpunit="vendor/bin/phpunit"
 alias phpunitw="phpunit-watcher watch"
 alias c="composer"
 alias cu="composer update"
