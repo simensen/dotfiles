@@ -30,3 +30,6 @@ yarn-error.log
 
 # phpunit
 .phpunit.result.cache
+
+# composer
+auth.json
