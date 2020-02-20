@@ -76,3 +76,27 @@ if [ -f '/Users/simensen/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/U
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/simensen/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/simensen/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+_artisan()
+{
+    local arg="${COMP_LINE#php }"
+
+    case "$arg" in
+        artisan*)
+            COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
+            COMMANDS=`php artisan --raw --no-ansi list | sed "s/[[:space:]].*//g"`
+            COMPREPLY=(`compgen -W "$COMMANDS" -- "${COMP_WORDS[COMP_CWORD]}"`)
+            ;;
+        *)
+            COMPREPLY=( $(compgen -o default -- "${COMP_WORDS[COMP_CWORD]}") )
+            ;;
+        esac
+
+    return 0
+}
+complete -F _artisan php
+
+function title () {
+    TITLE=$*;
+    export PROMPT_COMMAND='echo -ne "\033]0;$TITLE\007"';
+}

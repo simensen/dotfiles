@@ -17,6 +17,7 @@ alias man=tldr
 
 # JavaScript
 alias jest="./node_modules/.bin/jest"
+alias npmr="npm run"
 
 # List all files colorized in long format
 alias l="ls -laF"
@@ -37,13 +38,30 @@ alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
-# Enable aliases for working with Deliver My Ride
-alias dmr-up='docker-compose up'
-alias dmr-manage='docker-compose run --rm app php artisan'
-alias dmr-migrate='docker-compose run --rm app php artisan migrate'
-alias dmr-es-index='docker-compose run --rm app php artisan scout:import "App\Models\Deal"'
-alias dmr-es-create='docker-compose run --rm app php artisan elastic:create-index App\\DealIndexConfigurator'
-alias dmr-es-burn='docker-compose run --rm app php artisan elastic:drop-index App\\DealIndexConfigurator && php artisan elastic:create-index App\\DealIndexConfigurator && php artisan scout:import "App\Models\Deal"'
-alias dmr-db-list='docker-compose exec mysql backups'
-alias dmr-db-backup='docker-compose exec mysql backup'
-alias dmr-db-restore='docker-compose exec mysql restore'
+# Docker
+alias dce='docker-compose execute'
+alias docker-composer='docker run --rm --interactive --tty --volume $PWD:/app composer'
+
+# CDS
+alias cds-up='docker-compose up'
+alias cds-down='docker-compose down'
+alias cds-restart='docker-compose restart'
+alias cds-artisan='docker-compose exec php php artisan'
+alias cds-tinker='docker-compose exec php php artisan tinker'
+alias cds-composer='docker-compose exec php composer'
+
+# Liquid Forms
+alias lf-up='docker-compose up'
+alias lf-down='docker-compose down'
+alias lf-restart='docker-compose restart'
+alias lf-artisan='docker-compose exec php php artisan'
+alias lf-tinker='docker-compose exec php php artisan tinker'
+alias lf-composer='docker-compose exec php composer'
+
+# FanDraft
+alias fd-up='docker-compose up'
+alias fd-down='docker-compose down'
+alias fd-restart='docker-compose restart'
+alias fd-artisan='docker-compose exec php php artisan'
+alias fd-tinker='docker-compose exec php php artisan tinker'
+alias fd-composer='docker-compose exec php composer'
