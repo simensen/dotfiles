@@ -33,3 +33,6 @@ yarn-error.log
 
 # composer
 auth.json
+
+# Ignore Beau's env files
+.env.beau
