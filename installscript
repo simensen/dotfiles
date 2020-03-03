@@ -17,20 +17,10 @@ pushd $HOME/.dotfiles
 
 echo 'Install composer'
 echo '----------------'
-cd ~/.dotfiles
-
-EXPECTED_SIGNATURE="$(wget -q -O - https://composer.github.io/installer.sig)"
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-ACTUAL_SIGNATURE="$(php -r "echo hash_file('sha384', 'composer-setup.php');")"
-
-if [ "$EXPECTED_SIGNATURE" != "$ACTUAL_SIGNATURE" ]
-then
-    >&2 echo 'ERROR: Invalid installer signature'
-    rm composer-setup.php
-    exit 1
-fi
-
-php composer-setup.php --quiet
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'a5c698ffe4b8e849a443b120cd5ba38043260d5c4023dbf93e1558871f1f07f58274fc6f4c93bcfd858c6bd0775cd8d1') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
 rm -f composer-setup.php
 
 echo 'move composer to /usr/local/bin/composer'
@@ -58,21 +48,9 @@ echo 'Install ruby'
 echo '------------'
 brew install ruby
 
-echo 'Install bat'
-echo '-----------'
-brew install bat
-
-echo 'Install tldr'
-echo '------------'
-brew install tldr
-
 echo 'Install pkg-config'
 echo '------------------'
 brew install pkg-config
-
-echo 'Install prettyping'
-echo '------------------'
-brew install prettyping
 
 echo 'Install wget'
 echo '------------'
@@ -113,6 +91,7 @@ brew install php@7.0
 brew install php@7.1
 brew install php@7.2
 brew install php@7.3
+brew install php@7.4
 
 echo 'Install imagemagick'
 echo '-------------------'
@@ -141,10 +120,6 @@ pecl install amqp
 echo 'Install laravel envoy'
 echo '---------------------'
 composer global require "laravel/envoy=~1.0"
-
-echo 'Install php-cs-fixer'
-echo '--------------------'
-composer global require friendsofphp/php-cs-fixer
 
 echo 'Install phpunit-watcher'
 echo '---------------------'
@@ -194,7 +169,7 @@ pip3 install powerline-gitstatus
 echo 'Install blackfire (agent and probes)'
 echo '------------------------------------'
 brew tap blackfireio/homebrew-blackfire
-brew install blackfire-agent blackfire-php70 blackfire-php71 blackfire-php72
+brew install blackfire-agent blackfire-php70 blackfire-php71 blackfire-php72 blackfire-php73 blackfire-php74
 
 echo 'Install Fira Code and Mono for Powerline'
 brew install homebrew/cask-fonts/font-fira-code
