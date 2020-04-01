@@ -47,6 +47,10 @@ alias cds-restart='docker-compose restart'
 alias cds-artisan='docker-compose exec php php artisan'
 alias cds-tinker='docker-compose exec php php artisan tinker'
 alias cds-composer='docker-compose exec php composer'
+alias cds-test-artisan='docker-compose exec php_test php artisan'
+alias cds-phpunit='docker-compose exec php_test ./vendor/bin/phpunit'
+alias cds-dusk='docker-compose exec php_test php artisan dusk'
+alias cds-dusk:fails='docker-compose exec php_test php artisan dusk:fails'
 
 # Liquid Forms
 alias lf-up='docker-compose up'
