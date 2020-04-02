@@ -41,16 +41,27 @@ alias dce='docker-compose execute'
 alias docker-composer='docker run --rm --interactive --tty --volume $PWD:/app composer'
 
 # CDS
-alias cds-up='docker-compose up'
-alias cds-down='docker-compose down'
-alias cds-restart='docker-compose restart'
-alias cds-artisan='docker-compose exec php php artisan'
-alias cds-tinker='docker-compose exec php php artisan tinker'
-alias cds-composer='docker-compose exec php composer'
-alias cds-test-artisan='docker-compose exec php_test php artisan'
-alias cds-phpunit='docker-compose exec php_test ./vendor/bin/phpunit'
-alias cds-dusk='docker-compose exec php_test php artisan dusk'
-alias cds-dusk:fails='docker-compose exec php_test php artisan dusk:fails'
+alias cds-docker-compose2='docker-compose \
+ -f docker/docker-compose.common.yml \
+ -f docker/docker-compose.common-traefik.yml \
+ -f docker/docker-compose.macos-project_root.yml \
+ -f docker/docker-compose.testing.yml \
+ -f docker/docker-compose.testing-traefik.yml \
+ -f docker/docker-compose.tinkerwell.yml \
+ -f docker/docker-compose.tinkerwell-traefik.yml \
+ -f docker/docker-compose.traefik.yml \
+ -f docker-compose.override.yml'
+
+alias cds-up='cds-docker-compose up'
+alias cds-down='cds-docker-compose down'
+alias cds-restart='cds-docker-compose restart'
+alias cds-artisan='cds-docker-compose exec php php artisan'
+alias cds-tinker='cds-docker-compose exec php php artisan tinker'
+alias cds-composer='cds-docker-compose exec php composer'
+alias cds-test-artisan='cds-docker-compose exec php_test php artisan'
+alias cds-phpunit='cds-docker-compose exec php_test ./vendor/bin/phpunit'
+alias cds-dusk='cds-docker-compose exec php_test php artisan dusk'
+alias cds-dusk:fails='cds-docker-compose exec php_test php artisan dusk:fails'
 
 # Liquid Forms
 alias lf-up='docker-compose up'
