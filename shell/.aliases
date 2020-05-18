@@ -41,7 +41,8 @@ alias dce='docker-compose execute'
 alias docker-composer='docker run --rm --interactive --tty --volume $PWD:/app composer'
 
 # CDS
-alias cds-docker-compose2='docker-compose \
+alias cds-docker-compose='docker-compose \
+ -p cpapdropship \
  -f docker/docker-compose.common.yml \
  -f docker/docker-compose.common-traefik.yml \
  -f docker/docker-compose.macos-project_root.yml \
@@ -49,8 +50,8 @@ alias cds-docker-compose2='docker-compose \
  -f docker/docker-compose.testing-traefik.yml \
  -f docker/docker-compose.tinkerwell.yml \
  -f docker/docker-compose.tinkerwell-traefik.yml \
- -f docker/docker-compose.traefik.yml \
- -f docker-compose.override.yml'
+ -f docker/docker-compose.traefik-external.yml \
+ -f docker/docker-compose.override.yml'
 
 alias cds-up='cds-docker-compose up'
 alias cds-down='cds-docker-compose down'
@@ -59,9 +60,19 @@ alias cds-artisan='cds-docker-compose exec php php artisan'
 alias cds-tinker='cds-docker-compose exec php php artisan tinker'
 alias cds-composer='cds-docker-compose exec php composer'
 alias cds-test-artisan='cds-docker-compose exec php_test php artisan'
+alias cds-test-fresh='cds-test-artisan migrate:fresh --seeder=TestCasesSeeder'
+alias cds-fresh='cds-artisan migrate:fresh --seeder=TestCasesSeeder'
 alias cds-phpunit='cds-docker-compose exec php_test ./vendor/bin/phpunit'
 alias cds-dusk='cds-docker-compose exec php_test php artisan dusk'
 alias cds-dusk:fails='cds-docker-compose exec php_test php artisan dusk:fails'
+alias cds-cs='cds-docker-compose exec php php vendor/bin/phpcs'
+alias cds-cbf='cds-docker-compose exec php php vendor/bin/phpcbf'
+alias cds-psalm='cds-docker-compose exec php php vendor/bin/psalm'
+alias cds-eslint='npx eslint resources/js'
+alias cds-eslint-fix='npx eslint --fix resources/js'
+
+alias cds-check='(cds-cs; cds-phpunit; cds-dusk; cds-psalm; cds-eslint)'
+alias cds-fix='(cds-cbf; cds-eslint-fix)'
 
 # Liquid Forms
 alias lf-up='docker-compose up'
@@ -78,3 +89,109 @@ alias fd-restart='docker-compose restart'
 alias fd-artisan='docker-compose exec php php artisan'
 alias fd-tinker='docker-compose exec php php artisan tinker'
 alias fd-composer='docker-compose exec php composer'
+
+# beausimensen
+alias bs-docker-compose='docker-compose \
+    -p beausimensen \
+    -f docker/docker-compose.common.yml \
+    -f docker/docker-compose.common-traefik.yml \
+    -f docker/docker-compose.macos-project_root.yml \
+    -f docker/docker-compose.testing.yml \
+    -f docker/docker-compose.testing-traefik.yml \
+    -f docker/docker-compose.tinkerwell.yml \
+    -f docker/docker-compose.tinkerwell-traefik.yml \
+    -f docker/docker-compose.traefik-external.yml \
+    -f docker/docker-compose.override.yml'
+
+alias bs-up='bs-docker-compose up'
+alias bs-down='bs-docker-compose down'
+alias bs-restart='bs-docker-compose restart'
+alias bs-artisan='bs-docker-compose exec php php artisan'
+alias bs-tinker='bs-docker-compose exec php php artisan tinker'
+alias bs-composer='bs-docker-compose exec php composer'
+alias bs-ide='bs-composer ide'
+alias bs-test-artisan='bs-docker-compose exec php_test php artisan'
+alias bs-test-fresh='bs-test-artisan migrate:fresh'
+alias bs-fresh='bs-artisan migrate:fresh'
+alias bs-phpunit='bs-docker-compose exec php_test ./vendor/bin/phpunit'
+alias bs-dusk='bs-docker-compose exec php_test php artisan dusk'
+alias bs-dusk:fails='bs-docker-compose exec php_test php artisan dusk:fails'
+alias bs-cs='bs-docker-compose exec php php vendor/bin/phpcs'
+alias bs-cbf='bs-docker-compose exec php php vendor/bin/phpcbf'
+alias bs-psalm='bs-docker-compose exec php php vendor/bin/psalm'
+alias bs-eslint='npx eslint resources/js'
+alias bs-eslint-fix='npx eslint --fix resources/js'
+
+alias bs-check='(bs-cs; bs-phpunit; bs-dusk; bs-psalm; bs-eslint)'
+alias bs-fix='(bs-cbf; bs-eslint-fix)'
+
+
+# astrocasts
+alias ac-docker-compose='docker-compose \
+    -p astrocasts \
+    -f docker/docker-compose.common.yml \
+    -f docker/docker-compose.common-traefik.yml \
+    -f docker/docker-compose.macos-project_root.yml \
+    -f docker/docker-compose.testing.yml \
+    -f docker/docker-compose.testing-traefik.yml \
+    -f docker/docker-compose.tinkerwell.yml \
+    -f docker/docker-compose.tinkerwell-traefik.yml \
+    -f docker/docker-compose.traefik-external.yml \
+    -f docker/docker-compose.override.yml'
+
+alias ac-up='ac-docker-compose up'
+alias ac-down='ac-docker-compose down'
+alias ac-restart='ac-docker-compose restart'
+alias ac-artisan='ac-docker-compose exec php php artisan'
+alias ac-tinker='ac-docker-compose exec php php artisan tinker'
+alias ac-composer='ac-docker-compose exec php composer'
+alias ac-ide='ac-composer ide'
+alias ac-test-artisan='ac-docker-compose exec php_test php artisan'
+alias ac-test-fresh='ac-test-artisan migrate:fresh'
+alias ac-fresh='ac-artisan migrate:fresh'
+alias ac-phpunit='ac-docker-compose exec php_test ./vendor/bin/phpunit'
+alias ac-dusk='ac-docker-compose exec php_test php artisan dusk'
+alias ac-dusk:fails='ac-docker-compose exec php_test php artisan dusk:fails'
+alias ac-cs='ac-docker-compose exec php php vendor/bin/phpcs'
+alias ac-cbf='ac-docker-compose exec php php vendor/bin/phpcbf'
+alias ac-psalm='ac-docker-compose exec php php vendor/bin/psalm'
+alias ac-eslint='npx eslint resources/js'
+alias ac-eslint-fix='npx eslint --fix resources/js'
+
+alias ac-check='(ac-cs; ac-phpunit; ac-dusk; ac-psalm; ac-eslint)'
+alias ac-fix='(ac-cbf; ac-eslint-fix)'
+
+# dflydev
+alias df-docker-compose='docker-compose \
+    -p dflydev \
+    -f docker/docker-compose.common.yml \
+    -f docker/docker-compose.common-traefik.yml \
+    -f docker/docker-compose.macos-project_root.yml \
+    -f docker/docker-compose.testing.yml \
+    -f docker/docker-compose.testing-traefik.yml \
+    -f docker/docker-compose.tinkerwell.yml \
+    -f docker/docker-compose.tinkerwell-traefik.yml \
+    -f docker/docker-compose.traefik-external.yml \
+    -f docker/docker-compose.override.yml'
+
+alias df-up='df-docker-compose up'
+alias df-down='df-docker-compose down'
+alias df-restart='df-docker-compose restart'
+alias df-artisan='df-docker-compose exec php php artisan'
+alias df-tinker='df-docker-compose exec php php artisan tinker'
+alias df-composer='df-docker-compose exec php composer'
+alias df-ide='df-composer ide'
+alias df-test-artisan='df-docker-compose exec php_test php artisan'
+alias df-test-fresh='df-test-artisan migrate:fresh'
+alias df-fresh='df-artisan migrate:fresh'
+alias df-phpunit='df-docker-compose exec php_test ./vendor/bin/phpunit'
+alias df-dusk='df-docker-compose exec php_test php artisan dusk'
+alias df-dusk:fails='df-docker-compose exec php_test php artisan dusk:fails'
+alias df-cs='df-docker-compose exec php php vendor/bin/phpcs'
+alias df-cbf='df-docker-compose exec php php vendor/bin/phpcbf'
+alias df-psalm='df-docker-compose exec php php vendor/bin/psalm'
+alias df-eslint='npx eslint resources/js'
+alias df-eslint-fix='npx eslint --fix resources/js'
+
+alias df-check='(df-cs; df-phpunit; df-dusk; df-psalm; df-eslint)'
+alias df-fix='(df-cbf; df-eslint-fix)'

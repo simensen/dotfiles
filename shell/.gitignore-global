@@ -36,3 +36,6 @@ auth.json
 
 # Ignore Beau's env files
 .env.beau
+
+# Ignore act configuration
+.actrc
