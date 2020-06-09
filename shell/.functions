@@ -86,3 +86,12 @@ function db {
         mysql -uroot -e "drop database $2"
     fi
 }
+
+function webcam {
+    uvcc --vendor 0x46d --product 0x85b set autoFocus 0
+    uvcc --vendor 0x46d --product 0x85b set absoluteFocus 1
+    uvcc --vendor 0x46d --product 0x85b set absoluteZoom 100
+    uvcc --vendor 0x46d --product 0x85b set autoWhiteBalance 0
+    uvcc --vendor 0x46d --product 0x85b set whiteBalanceTemperature 4700
+    uvcc --vendor 0x46d --product 0x85b set autoExposureMode 1
+}
