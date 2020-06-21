@@ -97,6 +97,7 @@ __KERNEL__
 }
 
 # Liquid Forms
+alias lf-cd='cd ~/Code/liquidforms'
 alias lf-up='docker-compose up'
 alias lf-down='docker-compose down'
 alias lf-restart='docker-compose restart'
@@ -125,6 +126,7 @@ alias bs-docker-compose='docker-compose \
     -f docker/docker-compose.traefik-external.yml \
     -f docker/docker-compose.override.yml'
 
+alias bs-cd='cd ~/Code/beausimensen'
 alias bs-up='bs-docker-compose up'
 alias bs-down='bs-docker-compose down'
 alias bs-restart='bs-docker-compose restart'
@@ -182,6 +184,7 @@ alias ac-docker-compose='docker-compose \
     -f docker/docker-compose.traefik-external.yml \
     -f docker/docker-compose.override.yml'
 
+alias ac-cd='cd ~/Code/astrocasts'
 alias ac-up='ac-docker-compose up'
 alias ac-down='ac-docker-compose down'
 alias ac-restart='ac-docker-compose restart'
@@ -238,6 +241,7 @@ alias df-docker-compose='docker-compose \
     -f docker/docker-compose.traefik-external.yml \
     -f docker/docker-compose.override.yml'
 
+alias df-cd='cd ~/Code/dflydev'
 alias df-up='df-docker-compose up'
 alias df-down='df-docker-compose down'
 alias df-restart='df-docker-compose restart'
