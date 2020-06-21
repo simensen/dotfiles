@@ -53,6 +53,7 @@ alias cds-docker-compose='docker-compose \
  -f docker/docker-compose.traefik-external.yml \
  -f docker/docker-compose.override.yml'
 
+alias cds-cd='cd ~/Code/app.cpapdropship.com'
 alias cds-up='cds-docker-compose up'
 alias cds-down='cds-docker-compose down'
 alias cds-restart='cds-docker-compose restart'
@@ -70,9 +71,30 @@ alias cds-cbf='cds-docker-compose exec php php vendor/bin/phpcbf'
 alias cds-psalm='cds-docker-compose exec php php vendor/bin/psalm'
 alias cds-eslint='npx eslint resources/js'
 alias cds-eslint-fix='npx eslint --fix resources/js'
-
 alias cds-check='(cds-cs; cds-phpunit; cds-dusk; cds-psalm; cds-eslint)'
 alias cds-fix='(cds-cbf; cds-eslint-fix)'
+alias cds-shell='cds-docker-compose exec php bash'
+alias cds-mysql='cds-docker-compose exec -e MYSQL_PWD=password php mysql -h db -ucpapdropship cpapdropship'
+alias cds-php='cds-docker-compose exec php php'
+
+function cds-mysql-load {
+    SNAPSHOT="$1"
+    shift
+    cds-mysql --execute="SET autocommit=0 ; source database/snapshots/$SNAPSHOT.sql ; COMMIT ;" "$@"
+}
+
+function cds-run {
+    FILE="$1"
+    shift
+    KERNEL=$(cat <<__KERNEL__
+require __DIR__ . '/vendor/autoload.php';
+\$app = require __DIR__ . '/bootstrap/app.php';
+\$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+require_once '$FILE';
+__KERNEL__
+)
+    cds-php -r "$KERNEL" "$@"
+}
 
 # Liquid Forms
 alias lf-up='docker-compose up'
@@ -121,9 +143,30 @@ alias bs-cbf='bs-docker-compose exec php php vendor/bin/phpcbf'
 alias bs-psalm='bs-docker-compose exec php php vendor/bin/psalm'
 alias bs-eslint='npx eslint resources/js'
 alias bs-eslint-fix='npx eslint --fix resources/js'
-
 alias bs-check='(bs-cs; bs-phpunit; bs-dusk; bs-psalm; bs-eslint)'
 alias bs-fix='(bs-cbf; bs-eslint-fix)'
+alias bs-shell='bs-docker-compose exec php bash'
+alias bs-mysql='bs-docker-compose exec -e MYSQL_PWD=password php mysql -h db -ubeausimensen beausimensen'
+alias bs-php='bs-docker-compose exec php php'
+
+function bs-mysql-load {
+    SNAPSHOT="$1"
+    shift
+    bs-mysql --execute="SET autocommit=0 ; source database/snapshots/$SNAPSHOT.sql ; COMMIT ;" "$@"
+}
+
+function bs-run {
+    FILE="$1"
+    shift
+    KERNEL=$(cat <<__KERNEL__
+require __DIR__ . '/vendor/autoload.php';
+\$app = require __DIR__ . '/bootstrap/app.php';
+\$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+require_once '$FILE';
+__KERNEL__
+)
+    bs-php -r "$KERNEL" "$@"
+}
 
 
 # astrocasts
@@ -157,9 +200,30 @@ alias ac-cbf='ac-docker-compose exec php php vendor/bin/phpcbf'
 alias ac-psalm='ac-docker-compose exec php php vendor/bin/psalm'
 alias ac-eslint='npx eslint resources/js'
 alias ac-eslint-fix='npx eslint --fix resources/js'
-
 alias ac-check='(ac-cs; ac-phpunit; ac-dusk; ac-psalm; ac-eslint)'
 alias ac-fix='(ac-cbf; ac-eslint-fix)'
+alias ac-shell='ac-docker-compose exec php bash'
+alias ac-mysql='ac-docker-compose exec -e MYSQL_PWD=password php mysql -h db -uastrocasts astrocasts'
+alias ac-php='ac-docker-compose exec php php'
+
+function ac-mysql-load {
+    SNAPSHOT="$1"
+    shift
+    ac-mysql --execute="SET autocommit=0 ; source database/snapshots/$SNAPSHOT.sql ; COMMIT ;" "$@"
+}
+
+function ac-run {
+    FILE="$1"
+    shift
+    KERNEL=$(cat <<__KERNEL__
+require __DIR__ . '/vendor/autoload.php';
+\$app = require __DIR__ . '/bootstrap/app.php';
+\$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+require_once '$FILE';
+__KERNEL__
+)
+    ac-php -r "$KERNEL" "$@"
+}
 
 # dflydev
 alias df-docker-compose='docker-compose \
@@ -192,6 +256,27 @@ alias df-cbf='df-docker-compose exec php php vendor/bin/phpcbf'
 alias df-psalm='df-docker-compose exec php php vendor/bin/psalm'
 alias df-eslint='npx eslint resources/js'
 alias df-eslint-fix='npx eslint --fix resources/js'
-
 alias df-check='(df-cs; df-phpunit; df-dusk; df-psalm; df-eslint)'
 alias df-fix='(df-cbf; df-eslint-fix)'
+alias df-shell='df-docker-compose exec php bash'
+alias df-mysql='df-docker-compose exec -e MYSQL_PWD=password php mysql -h db -udflydev dflydev'
+alias df-php='df-docker-compose exec php php'
+
+function df-mysql-load {
+    SNAPSHOT="$1"
+    shift
+    df-mysql --execute="SET autocommit=0 ; source database/snapshots/$SNAPSHOT.sql ; COMMIT ;" "$@"
+}
+
+function df-run {
+    FILE="$1"
+    shift
+    KERNEL=$(cat <<__KERNEL__
+require __DIR__ . '/vendor/autoload.php';
+\$app = require __DIR__ . '/bootstrap/app.php';
+\$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+require_once '$FILE';
+__KERNEL__
+)
+    df-php -r "$KERNEL" "$@"
+}
