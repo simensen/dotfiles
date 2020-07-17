@@ -60,8 +60,9 @@ alias cds-restart='cds-docker-compose restart'
 alias cds-artisan='cds-docker-compose exec php php artisan'
 alias cds-tinker='cds-docker-compose exec php php artisan tinker'
 alias cds-composer='cds-docker-compose exec php composer'
+alias cds-ide='cds-docker-compose exec php composer ide'
 alias cds-test-artisan='cds-docker-compose exec php_test php artisan'
-alias cds-test-fresh='cds-test-artisan migrate:fresh --seeder=TestCasesSeeder'
+alias cds-test-fresh='cds-test-artisan migrate:fresh'
 alias cds-fresh='cds-artisan migrate:fresh --seeder=TestCasesSeeder'
 alias cds-phpunit='cds-docker-compose exec php_test ./vendor/bin/phpunit'
 alias cds-dusk='cds-docker-compose exec php_test php artisan dusk'
@@ -75,9 +76,19 @@ alias cds-check='(cds-cs; cds-phpunit; cds-dusk; cds-psalm; cds-eslint)'
 alias cds-fix='(cds-cbf; cds-eslint-fix)'
 alias cds-shell='cds-docker-compose exec php bash'
 alias cds-mysql='cds-docker-compose exec -e MYSQL_PWD=password php mysql -h db -ucpapdropship cpapdropship'
+alias cds-test-mysql='cds-docker-compose exec -e MYSQL_PWD=password php_test mysql -h db -ucpapdropship cpapdropship'
 alias cds-php='cds-docker-compose exec php php'
 
-function cds-mysql-load {
+alias cds-snapshot-create='cds-artisan snapshot:create'
+alias cds-snapshot-list='cds-artisan snapshot:list'
+
+function cds-test-snapshot-load {
+    SNAPSHOT="$1"
+    shift
+    cds-mysql --execute="SET autocommit=0 ; source database/snapshots/$SNAPSHOT.sql ; COMMIT ;" "$@"
+}
+
+function cds-snapshot-load {
     SNAPSHOT="$1"
     shift
     cds-mysql --execute="SET autocommit=0 ; source database/snapshots/$SNAPSHOT.sql ; COMMIT ;" "$@"
