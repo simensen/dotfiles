@@ -54,6 +54,20 @@ for file in ~/.dotfiles-custom/shell/.{exports,aliases,functions,zshrc}; do
 done
 unset file
 
+unsetopt nomatch
+
+# Load the shell dotfiles, and then some:
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.dotfiles/shell/.{exports,aliases,functions,projects}.d/*; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
+
+for file in ~/.dotfiles-custom/shell/.{exports,aliases,functions,projects,zshrc}.d/*; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
+unset file
+
+
 # Load rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
@@ -86,6 +100,7 @@ ssh-add -A 2>/dev/null;
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

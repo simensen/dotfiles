@@ -1,0 +1,69 @@
+alias whrc-portal-rehash='. /Users/simensen/.dotfiles/shell/.projects.d/whrc-portal'
+
+alias whrc-portal-cd='cd /Users/simensen/Code/whrc-portal'
+
+# Docker Compose
+function whrc-portal-docker-compose {
+    if [ -f ".contrail/docker/docker-compose.override.yaml" ]; then
+        docker-compose \
+            -p whrc-portal \
+            -f .contrail/docker/docker-compose.common.yaml \
+            -f .contrail/docker/docker-compose.common-traefik.yaml \
+            -f .contrail/docker/docker-compose.testing.yaml \
+            -f .contrail/docker/docker-compose.testing-traefik.yaml \
+            -f .contrail/docker/docker-compose.project-root-nfs.yaml \
+            -f .contrail/docker/docker-compose.traefik-external.yaml \
+            -f .contrail/docker/docker-compose.override.yaml \
+            "$@"
+    else
+        docker-compose \
+            -p whrc-portal \
+            -f .contrail/docker/docker-compose.common.yaml \
+            -f .contrail/docker/docker-compose.common-traefik.yaml \
+            -f .contrail/docker/docker-compose.testing.yaml \
+            -f .contrail/docker/docker-compose.testing-traefik.yaml \
+            -f .contrail/docker/docker-compose.project-root-nfs.yaml \
+            -f .contrail/docker/docker-compose.traefik-external.yaml \
+            "$@"
+    fi
+}
+
+# Docker Compose Helpers
+alias whrc-portal-up='whrc-portal-docker-compose up'
+alias whrc-portal-down='whrc-portal-docker-compose down'
+alias whrc-portal-restart='whrc-portal-docker-compose restart'
+
+# Core
+alias whrc-portal-shell='whrc-portal-docker-compose exec php bash'
+alias whrc-portal-composer='whrc-portal-docker-compose exec php composer'
+
+# PHP and Composer
+alias whrc-portal-php='whrc-portal-docker-compose exec php php'
+alias whrc-portal-composer='whrc-portal-docker-compose exec php composer'
+alias whrc-portal-php-test='whrc-portal-docker-compose exec php_testing php'
+
+# PHPUnit
+alias whrc-portal-phpunit='whrc-portal-php-test ./vendor/bin/phpunit'
+alias whrc-portal-phpunit-coverage='whrc-portal-phpunit  --coverage-html=public/coverage'
+
+# Laravel
+alias whrc-portal-artisan='whrc-portal-php artisan'
+alias whrc-portal-tinker='whrc-portal-artisan tinker'
+
+# Laravel Testing
+alias whrc-portal-test-artisan='whrc-portal-php-test artisan'
+
+# MySQL
+alias whrc-portal-mysql='whrc-portal-docker-compose exec -e MYSQL_PWD=password php mysql -h mysql -uwhrc-portal whrc-portal'
+alias whrc-portal-mysql-test='whrc-portal-docker-compose exec -e MYSQL_PWD=password php_testing mysql -h mysql_testing -uwhrc-portal whrc-portal'
+
+alias whrc-portal-dusk='whrc-portal-test-artisan dusk'
+alias whrc-portal-fresh='whrc-portal-artisan migrate:fresh --seed'
+alias whrc-portal-test-fresh='whrc-portal-artisan migrate:fresh'
+alias whrc-portal-ide='whrc-portal-artisan ide-helper:generate && \
+whrc-portal-artisan ide-helper:models -N && \
+whrc-portal-artisan ide-helper:eloquent'
+alias whrc-portal-phpcbf='whrc-portal-php vendor/bin/phpcbf'
+alias whrc-portal-phpcs='whrc-portal-php vendor/bin/phpcs'
+alias whrc-portal-psalm='whrc-portal-php vendor/bin/psalm'
+alias whrc-portal-vapor='whrc-portal-php vendor/bin/vapor'
