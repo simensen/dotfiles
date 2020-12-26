@@ -1,0 +1,91 @@
+alias ninjagrlcom-rehash='. /Users/simensen/.dotfiles/shell/.projects.d/ninjagrlcom'
+
+alias ninjagrlcom-cd='cd /Users/simensen/Code/ninjagrl.com'
+
+# Docker Compose
+function ninjagrlcom-docker-compose {
+    DOCKER_COMPOSE_ENV_FILE_OPT=''
+    if [ -f '.contrail/docker/.env' ]; then
+        DOCKER_COMPOSE_ENV_FILE_OPT='--env-file .contrail/docker/.env'
+    fi
+
+    if [ -f ".contrail/docker/docker-compose.override.yaml" ]; then
+        docker-compose $(echo ${DOCKER_COMPOSE_ENV_FILE_OPT}) \
+            -p ninjagrlcom \
+            -f .contrail/docker/docker-compose.common.yaml \
+            -f .contrail/docker/docker-compose.common-traefik.yaml \
+            -f .contrail/docker/docker-compose.project-root-nfs.yaml \
+            -f .contrail/docker/docker-compose.traefik-external.yaml \
+            -f .contrail/docker/docker-compose.override.yaml \
+            "$@"
+    else
+        docker-compose $(echo ${DOCKER_COMPOSE_ENV_FILE_OPT}) \
+            -p ninjagrlcom \
+            -f .contrail/docker/docker-compose.common.yaml \
+            -f .contrail/docker/docker-compose.common-traefik.yaml \
+            -f .contrail/docker/docker-compose.project-root-nfs.yaml \
+            -f .contrail/docker/docker-compose.traefik-external.yaml \
+            "$@"
+    fi
+}
+
+# Docker Compose Helpers
+alias ninjagrlcom-up='ninjagrlcom-docker-compose up'
+alias ninjagrlcom-down='ninjagrlcom-docker-compose down'
+alias ninjagrlcom-restart='ninjagrlcom-docker-compose restart'
+
+# Core
+alias ninjagrlcom-shell='ninjagrlcom-docker-compose exec php bash'
+alias ninjagrlcom-composer='ninjagrlcom-docker-compose exec php composer'
+
+# PHP and Composer
+alias ninjagrlcom-php='ninjagrlcom-docker-compose exec php php'
+alias ninjagrlcom-composer='ninjagrlcom-docker-compose exec php composer'
+alias ninjagrlcom-php-test='ninjagrlcom-docker-compose exec php_testing php'
+
+# PHPUnit
+alias ninjagrlcom-phpunit='ninjagrlcom-php-test ./vendor/bin/phpunit'
+alias ninjagrlcom-phpunit-coverage='ninjagrlcom-phpunit --coverage-html=public/coverage'
+
+# Laravel
+alias ninjagrlcom-artisan='ninjagrlcom-php artisan'
+alias ninjagrlcom-tinker='ninjagrlcom-artisan tinker'
+
+# Laravel Testing
+alias ninjagrlcom-test-artisan='ninjagrlcom-php-test artisan --env=testing'
+
+# MySQL
+alias ninjagrlcom-mysql='ninjagrlcom-docker-compose exec -e MYSQL_PWD=password php mysql -h mysql -uninjagrlcom ninjagrlcom'
+alias ninjagrlcom-mysqldump='ninjagrlcom-docker-compose exec -e MYSQL_PWD=password php mysqldump -h mysql -uninjagrlcom ninjagrlcom'
+alias ninjagrlcom-test-mysql='ninjagrlcom-docker-compose exec -e MYSQL_PWD=password php_testing mysql -h mysql_testing -uninjagrlcom ninjagrlcom'
+alias ninjagrlcom-test-mysqldump='ninjagrlcom-docker-compose exec -e MYSQL_PWD=password php_testing mysqldump -h mysql_testing -uninjagrlcom ninjagrlcom'
+
+function ninjagrlcom-mysql-snapshot-create {
+    SNAPSHOT="$1"
+    shift
+    ninjagrlcom-mysqldump --result-file=database/snapshots/${SNAPSHOT}.sql "$@"
+}
+
+function ninjagrlcom-mysql-snapshot-load {
+    SNAPSHOT="$1"
+    shift
+    ninjagrlcom-mysql --execute="SET autocommit=0 ; source database/snapshots/${SNAPSHOT}.sql ; COMMIT ;" "$@"
+}
+
+function ninjagrlcom-test-mysql-snapshot-create {
+    SNAPSHOT="$1"
+    shift
+    ninjagrlcom-test-mysqldump --result-file=database/snapshots/${SNAPSHOT}.sql "$@"
+}
+
+function ninjagrlcom-test-mysql-snapshot-load {
+    SNAPSHOT="$1"
+    shift
+    ninjagrlcom-test-mysql --execute="SET autocommit=0 ; source database/snapshots/${SNAPSHOT}.sql ; COMMIT ;" "$@"
+}
+
+
+alias ninjagrlcom-fresh='ninjagrlcom-artisan migrate:refresh'
+alias ninjagrlcom-ide='ninjagrlcom-artisan ide-helper:generate && \
+ninjagrlcom-artisan ide-helper:models -N && \
+ninjagrlcom-artisan ide-helper:eloquent'

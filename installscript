@@ -38,14 +38,18 @@ pushd $HOME/.dotfiles
 
 echo 'Install composer'
 echo '----------------'
+EXPECTED_COMPOSER_CHECKSUM="$(curl https://composer.github.io/installer.sig)"
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('sha384', 'composer-setup.php') === 'a5c698ffe4b8e849a443b120cd5ba38043260d5c4023dbf93e1558871f1f07f58274fc6f4c93bcfd858c6bd0775cd8d1') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+ACTUAL_COMPOSER_CHECKSUM="$(php -r "echo hash_file('sha384', 'composer-setup.php');")"
+if [ "$EXPECTED_COMPOSER_CHECKSUM" != "$ACTUAL_COMPOSER_CHECKSUM" ]
+then
+    >&2 echo 'ERROR: Invalid installer checksum'
+    rm composer-setup.php
+    exit 1
+fi
 php composer-setup.php
-php -r "unlink('composer-setup.php');"
-rm -f composer-setup.php
-
-echo 'move composer to /usr/local/bin/composer'
-mv -f composer.phar /usr/local/bin/composer
+rm composer-setup.php
+mv composer.phar /usr/local/bin/composer
 
 echo 'Install homebrew'
 echo '----------------'
@@ -108,11 +112,8 @@ brew cask install --force qlcolorcode qlstephen qlmarkdown quicklook-json qlpret
 
 echo 'Install php'
 echo '-----------'
-brew install php@7.0
-brew install php@7.1
-brew install php@7.2
-brew install php@7.3
 brew install php@7.4
+brew install php@8.0
 
 echo 'Install imagemagick'
 echo '-------------------'
@@ -170,10 +171,6 @@ brew install redis
 echo 'Install mariadb'
 echo '---------------'
 brew install mariadb
-
-echo 'Install yarn'
-echo '------------'
-brew install yarn
 
 echo 'Install ghostscript'
 echo '-------------------'
