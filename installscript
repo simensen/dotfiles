@@ -3,6 +3,8 @@
 # Hide "last login" line when starting a new terminal session
 touch $HOME/.hushlogin
 
+sudo mkdir -p -m 755 /usr/local/bin
+
 mkdir -p ~/.config
 
 # Install zsh
@@ -55,11 +57,16 @@ echo 'Install homebrew'
 echo '----------------'
 echo install homebrew
 sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
 
 echo 'Install git'
 echo '-----------'
 brew install git
+
+echo 'Install subversion'
+echo '------------------'
+brew install sv
 
 echo 'Install bash-completion'
 echo '-----------------------'
@@ -79,7 +86,7 @@ brew install pkg-config
 
 echo 'Install wget'
 echo '------------'
-brew install wget --overwrite
+brew install wget
 
 echo 'Install httpie'
 echo '--------------'
@@ -103,7 +110,7 @@ brew install doctl
 
 echo 'Install brew-cask'
 echo '-----------------'
-brew tap caskroom/cask
+brew tap homebrew/cask
 brew install brew-cask
 
 echo 'Install some nice quicklook plugins'
@@ -137,19 +144,9 @@ pecl install redis
 
 echo 'Install ext-amqp'
 echo '-----------------'
-pecl install amqp
-
-echo 'Install laravel envoy'
-echo '---------------------'
-composer global require "laravel/envoy=~1.0"
-
-echo 'Install phpunit-watcher'
-echo '---------------------'
-composer global require spatie/phpunit-watcher
-
-echo 'Install mixed-content-scanner-cli'
-echo '---------------------------------'
-composer global require spatie/mixed-content-scanner-cli
+git clone https://github.com/php-amqp/php-amqp.git
+phpize
+env PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$(brew --prefix openssl)/lib/pkgconfig:$(brew --prefix rabbitmq-c)/lib/pkgconfig" ./configure
 
 echo 'Install laravel valet'
 echo '---------------------'
@@ -168,10 +165,6 @@ echo 'Install redis server'
 echo '--------------------'
 brew install redis
 
-echo 'Install mariadb'
-echo '---------------'
-brew install mariadb
-
 echo 'Install ghostscript'
 echo '-------------------'
 brew install ghostscript
@@ -187,7 +180,7 @@ pip3 install powerline-gitstatus
 echo 'Install blackfire (agent and probes)'
 echo '------------------------------------'
 brew tap blackfireio/homebrew-blackfire
-brew install blackfire-agent blackfire-php70 blackfire-php71 blackfire-php72 blackfire-php73 blackfire-php74
+brew install blackfire-agent blackfire-php74 blackfire-php80
 
 echo 'Install Fira Code and Mono for Powerline'
 brew install homebrew/cask-fonts/font-fira-code
