@@ -17,10 +17,6 @@ curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/in
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 
-# Fix missing font characters (see https://github.com/robbyrussell/oh-my-zsh/issues/1906)
-cd ~/.oh-my-zsh/themes/
-git checkout d6a36b1 agnoster.zsh-theme
-
 # Symlink vim prefs
 rm $HOME/.vimrc
 ln -s $HOME/.dotfiles/shell/.vimrc $HOME/.vimrc
@@ -51,7 +47,7 @@ then
 fi
 php composer-setup.php
 rm composer-setup.php
-mv composer.phar /usr/local/bin/composer
+sudo mv composer.phar /usr/local/bin/composer
 
 echo 'Install homebrew'
 echo '----------------'
@@ -73,7 +69,7 @@ echo '-----------------------'
 brew install bash-completion
 
 echo 'Install node'
-echo '-----------'
+echo '------------'
 brew install node
 
 echo 'Install ruby'
@@ -122,32 +118,6 @@ echo '-----------'
 brew install php@7.4
 brew install php@8.0
 
-echo 'Install imagemagick'
-echo '-------------------'
-brew install imagemagick
-
-echo 'Install ext-imagick'
-echo '-------------------'
-pecl install imagick
-
-echo 'Install ext-memcached'
-echo '---------------------'
-pecl install memcached
-
-echo 'Install ext-xdebug'
-echo '------------------'
-pecl install xdebug
-
-echo 'Install ext-redis'
-echo '-----------------'
-pecl install redis
-
-echo 'Install ext-amqp'
-echo '-----------------'
-git clone https://github.com/php-amqp/php-amqp.git
-phpize
-env PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$(brew --prefix openssl)/lib/pkgconfig:$(brew --prefix rabbitmq-c)/lib/pkgconfig" ./configure
-
 echo 'Install laravel valet'
 echo '---------------------'
 composer global require laravel/valet
@@ -177,11 +147,6 @@ echo 'Install powerline-gitstatus'
 echo '---------------------------'
 pip3 install powerline-gitstatus
 
-echo 'Install blackfire (agent and probes)'
-echo '------------------------------------'
-brew tap blackfireio/homebrew-blackfire
-brew install blackfire-agent blackfire-php74 blackfire-php80
-
 echo 'Install Fira Code and Mono for Powerline'
 brew install homebrew/cask-fonts/font-fira-code
 brew install homebrew/cask-fonts/font-fira-mono-for-powerline
@@ -193,3 +158,14 @@ brew install mackup
 echo 'Install zsh-autosuggestions'
 echo '---------------------------'
 brew install zsh-autosuggestions
+
+echo 'Install nvm'
+echo '-----------'
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+nvm install --lts
+
+echo 'Install rbenv'
+echo '-------------'
+brew install rbenv
+
+

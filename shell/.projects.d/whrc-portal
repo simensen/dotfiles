@@ -18,7 +18,6 @@ function whrc-portal-docker-compose {
             -f .contrail/docker/docker-compose.common-traefik.yaml \
             -f .contrail/docker/docker-compose.testing.yaml \
             -f .contrail/docker/docker-compose.testing-traefik.yaml \
-            -f .contrail/docker/docker-compose.project-root-nfs.yaml \
             -f .contrail/docker/docker-compose.traefik-external.yaml \
             -f .contrail/docker/docker-compose.override.yaml \
             "$@"
@@ -29,7 +28,6 @@ function whrc-portal-docker-compose {
             -f .contrail/docker/docker-compose.common-traefik.yaml \
             -f .contrail/docker/docker-compose.testing.yaml \
             -f .contrail/docker/docker-compose.testing-traefik.yaml \
-            -f .contrail/docker/docker-compose.project-root-nfs.yaml \
             -f .contrail/docker/docker-compose.traefik-external.yaml \
             "$@"
     fi
@@ -58,7 +56,7 @@ alias whrc-portal-artisan='whrc-portal-php artisan'
 alias whrc-portal-tinker='whrc-portal-artisan tinker'
 
 # Laravel Testing
-alias whrc-portal-test-artisan='whrc-portal-php-test artisan --env=testing'
+alias whrc-portal-test-artisan='whrc-portal-test-php artisan --env=testing'
 
 # MySQL
 alias whrc-portal-mysql='whrc-portal-docker-compose exec -e MYSQL_PWD=password php mysql -h mysql -uwhrc-portal whrc-portal'
@@ -93,9 +91,9 @@ function whrc-portal-test-mysql-snapshot-load {
 
 alias whrc-portal-dusk='whrc-portal-test-artisan dusk'
 alias whrc-portal-fresh='whrc-portal-artisan migrate:fresh'
-alias whrc-portal-test-fresh='whrc-portal-artisan migrate:fresh'
+alias whrc-portal-test-fresh='whrc-portal-test-artisan migrate:fresh'
 alias whrc-portal-ide='whrc-portal-artisan ide-helper:generate && \
-whrc-portal-artisan ide-helper:models -N && \
+whrc-portal-artisan ide-helper:models -M && \
 whrc-portal-artisan ide-helper:eloquent'
 alias whrc-portal-phpcbf='whrc-portal-php vendor/bin/phpcbf'
 alias whrc-portal-phpcs='whrc-portal-php vendor/bin/phpcs'
