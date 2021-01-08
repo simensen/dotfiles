@@ -69,12 +69,12 @@ function db {
 }
 
 function webcam {
-    uvcc --vendor 0x46d --product 0x85b set autoFocus 0
-    uvcc --vendor 0x46d --product 0x85b set absoluteFocus 1
-    uvcc --vendor 0x46d --product 0x85b set absoluteZoom 100
-    uvcc --vendor 0x46d --product 0x85b set autoWhiteBalance 0
-    uvcc --vendor 0x46d --product 0x85b set whiteBalanceTemperature 4700
-    uvcc --vendor 0x46d --product 0x85b set autoExposureMode 1
+    uvcc --vendor 1133 --product 2139 set auto_focus 0
+    #uvcc --vendor 1133 --product 2139 set absolute_focus 1
+    uvcc --vendor 1133 --product 2139 set absolute_zoom 100
+    uvcc --vendor 1133 --product 2139 set auto_white_balance_temperature 0
+    uvcc --vendor 1133 --product 2139 set white_balance_temperature 4700
+    uvcc --vendor 1133 --product 2139 set auto_exposure_mode 1
 }
 
 function silent() {
