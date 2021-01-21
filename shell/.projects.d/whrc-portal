@@ -90,6 +90,15 @@ function whrc-portal-test-mysql-snapshot-load() (
 )
 
 
+# blackfire
+alias whrc-portal-blackfire='whrc-portal-docker-compose exec php blackfire'
+alias whrc-portal-blackfire-run='whrc-portal-blackfire run'
+alias whrc-portal-blackfire-run-php='whrc-portal-blackfire-run php -d pcov.enabled=0'
+alias whrc-portal-blackfire-curl='whrc-portal-blackfire curl'
+alias whrc-portal-test-blackfire='whrc-portal-docker-compose exec php_testing blackfire'
+alias whrc-portal-test-blackfire-run='whrc-portal-test-blackfire run'
+alias whrc-portal-test-blackfire-run-php='whrc-portal-test-blackfire-run php -d pcov.enabled=0'
+
 # Custom
 alias whrc-portal-dusk='whrc-portal-test-artisan dusk'
 alias whrc-portal-fresh='whrc-portal-artisan migrate:fresh'

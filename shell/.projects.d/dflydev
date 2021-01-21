@@ -93,9 +93,11 @@ function dflydev-test-mysql-snapshot-load() (
 # blackfire
 alias dflydev-blackfire='dflydev-docker-compose exec php blackfire'
 alias dflydev-blackfire-run='dflydev-blackfire run'
+alias dflydev-blackfire-run-php='dflydev-blackfire-run php -d pcov.enabled=0'
 alias dflydev-blackfire-curl='dflydev-blackfire curl'
 alias dflydev-test-blackfire='dflydev-docker-compose exec php_testing blackfire'
 alias dflydev-test-blackfire-run='dflydev-test-blackfire run'
+alias dflydev-test-blackfire-run-php='dflydev-test-blackfire-run php -d pcov.enabled=0'
 
 # Custom
 alias dflydev-dusk='dflydev-test-artisan dusk'
