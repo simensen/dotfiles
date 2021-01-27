@@ -108,7 +108,7 @@ dflydev-artisan ide-helper:models -M && \
 dflydev-artisan ide-helper:eloquent'
 alias dflydev-phpcbf='dflydev-php vendor/bin/phpcbf'
 alias dflydev-phpcs='dflydev-php vendor/bin/phpcs'
-alias dflydev-psalm='dflydev-php vendor/bin/psalm --no-cache'
+alias dflydev-psalm='dflydev-php vendor/bin/psalm'
 alias dflydev-vapor='dflydev-php vendor/bin/vapor'
 
 function dflydev-run {
