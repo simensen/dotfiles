@@ -1,8 +1,9 @@
 # Taps
+tap 'homebrew/bundle'
 tap 'homebrew/cask'
+tap 'homebrew/cask-drivers'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
-tap 'homebrew/bundle'
 
 # Binaries and Libraries
 brew 'awscli'
@@ -56,6 +57,7 @@ brew 'zsh-autosuggestions'
 # Apps
 cask '1password'
 cask '1password-cli'
+cask 'adobe-creative-cloud'
 cask 'alfred'
 cask 'discord'
 cask 'docker'
@@ -88,6 +90,7 @@ cask 'quicklook-json'
 cask 'quicklook-csv'
 
 # Fonts
+cask 'font-inter'
 cask 'font-lato'
 cask 'font-open-sans'
 cask 'font-roboto'
