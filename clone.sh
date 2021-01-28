@@ -147,35 +147,75 @@ clone_client() (
     __clone "$ORIGIN" "$CLIENTS/$CLIENT" "$@"
 )
 
-
+#
+# Clone a GitHub repo in the appropriate directory
+#
+# "username/repo" is always the first argument and will be treated as origin.
+#
+# All additional arguments are treated as forks. Forks can be just a username
+# or they can be a username and the name of the fork if it is different.
+#
+# In all cases, the username will be the name of any additional remotes.
+#
+# A simple example would be username "simensen" having a fork of "laravel/valet"
+# where the fork is named "simensen/valet".
+#
+# $ clone_laravel laravel/valet simensen
+#
+# * origin	git@github.com:laravel/valet.git (fetch)
+# * origin	git@github.com:laravel/valet.git (push)
+# * simensen	git@github.com:simensen/laravel-valet.git (fetch)
+# * simensen	git@github.com:simensen/laravel-valet.git (push)
+#
+# For example, username "simensen" has a fork of "laravel/framework" but is
+# named "simensen/laravel-framework".
+#
+# To treat "laravel/framework" as "origin" and to treat
+# "simensen/laravel-framework" as "simensen", the
+# following would be used:
+#
+# $ clone_laravel laravel/laravel simensen:laravel-framework
+#
+# * origin	git@github.com:laravel/framework.git (fetch)
+# * origin	git@github.com:laravel/framework.git (push)
+# * simensen	git@github.com:simensen/laravel-framework.git (fetch)
+# * simensen	git@github.com:simensen/laravel-framework.git (push)
+#
 
 # Sites
+
+# Valet will be parked in this directory
 
 clone_site dflydev/beausimensen
 clone_site dflydev/dflydev
 clone_site dflydev/ninjacraft
 clone_site dflydev/ninjagrl.com
+clone_site dflydev/prdeploy
 clone_site thatpodcast/thatpodcast
+
 
 # Clients
 
 clone_site dflydev/app.cpapdropship.com
-
 clone_site homeownership-wa/whrc-portal dflydev tighten:washington-homeownership-resource-center
+
 
 # dflydev tools
 
 clone dflydev/traefik-development
 
+
 # dflydev projects
 
 clone_dflydev dflydev/dflydev-fig-cookies simensen
+
 
 # dflydev projects (without forks... yet...)
 
 clone_dflydev dflydev/check-runs-action
 clone_dflydev dflydev/contrail
 clone_dflydev dflydev/dflydev-dot-access-data
+
 
 # Laravel
 
@@ -185,6 +225,7 @@ clone_laravel laravel/laravel simensen
 clone_laravel laravel/vapor-cli simensen
 clone_laravel laravel/vapor-core simensen
 clone_laravel laravel/valet simensen:laravel-valet
+
 
 # OSS projects
 clone EventSaucePHP/EventSauce simensen
