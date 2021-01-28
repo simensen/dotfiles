@@ -73,7 +73,7 @@ cask 'skype'
 cask 'slack'
 cask 'sublime-text'
 cask 'tableplus'
-cask 'telegram-desktop'
+cask 'telegram'
 cask 'the-unarchiver'
 cask 'there'
 cask 'tinkerwell'
@@ -94,7 +94,7 @@ cask 'font-roboto'
 cask 'font-source-code-pro-for-powerline'
 cask 'font-source-code-pro'
 cask 'font-source-sans-pro'
-cask 'font-source-serif-pro'
+cask 'font-source-serif'
 
 # Mac App Store
 mas 'Byword', id: 420212497
