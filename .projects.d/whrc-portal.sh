@@ -1,6 +1,6 @@
-alias whrc-portal-rehash='. /Users/simensen/.dotfiles/shell/.projects.d/whrc-portal'
+alias whrc-portal-rehash='. /Users/simensen/.dotfiles/.projects.d/whrc-portal.sh'
 
-alias whrc-portal-cd='cd /Users/simensen/Code/whrc-portal'
+alias whrc-portal-cd='cd /Users/simensen/Code/sites/whrc-portal'
 
 # Docker Compose
 function whrc-portal-docker-compose() (
