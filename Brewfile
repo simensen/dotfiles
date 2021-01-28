@@ -4,6 +4,7 @@ tap 'homebrew/cask'
 tap 'homebrew/cask-drivers'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
+tap 'stripe/stripe-cli'
 
 # Binaries and Libraries
 brew 'awscli'
@@ -29,7 +30,6 @@ brew 'colordiff'
 brew 'gnu-sed'
 brew 'gawk'
 brew 'wget'
-brew 'zoom'
 
 # Spatie Medialibrary
 brew 'jpegoptim'
@@ -76,6 +76,7 @@ cask 'imageoptim'
 cask 'insomnia'
 cask 'jetbrains-toolbox'
 cask 'miro'
+cask 'obs'
 cask 'screenflow'
 cask 'signal'
 cask 'skype'
@@ -90,6 +91,8 @@ cask 'transmission'
 cask 'transmit'
 cask 'visual-studio-code'
 cask 'vlc'
+cask 'whatsapp'
+cask 'zoom'
 
 # Quicklook
 cask 'qlmarkdown'
@@ -107,11 +110,18 @@ cask 'font-source-sans-pro'
 cask 'font-source-serif'
 
 # Mac App Store
+mas 'Bear', id: 1091189122
 mas 'Byword', id: 420212497
-#mas 'Giphy Capture', id: 668208984
+mas 'Harvest', id: 506189836
 mas 'Keynote', id: 409183694
-#mas 'Numbers', id: 409203825
-#mas 'Spark', id: 1176895641
-#mas 'Speedtest', id: 1153157709
-#mas 'Things', id: 904280696
+mas 'Kiwi for Gmail', id: 986304488
+mas 'Microsoft Excel', id: 462058435
+mas 'Microsoft Word', id: 462054704
+mas 'Numbers', id: 409203825
+mas 'Petrify', id: 1451177988
+mas 'Speedtest', id: 1153157709
+mas 'Spike', id: 707452888
+mas 'ToothFairy', id: 1191449274
+mas 'Trello', id: 1278508951
 mas 'Tweetbot', id: 1384080005
+mas 'Twitter', id: 1482454543
