@@ -1,6 +1,6 @@
-alias beausimensen-rehash='. /Users/simensen/.dotfiles/shell/.projects.d/beausimensen'
+alias beausimensen-rehash='. /Users/simensen/.dotfiles/.projects.d/beausimensen.sh'
 
-alias beausimensen-cd='cd /Users/simensen/Code/beausimensen'
+alias beausimensen-cd='cd /Users/simensen/Code/sites/beausimensen'
 
 # Docker Compose
 function beausimensen-docker-compose() (
@@ -90,9 +90,18 @@ function beausimensen-test-mysql-snapshot-load() (
 )
 
 
+# blackfire
+alias beausimensen-blackfire='beausimensen-docker-compose exec php blackfire'
+alias beausimensen-blackfire-run='beausimensen-blackfire run'
+alias beausimensen-blackfire-run-php='beausimensen-blackfire-run php -d pcov.enabled=0'
+alias beausimensen-blackfire-curl='beausimensen-blackfire curl'
+alias beausimensen-test-blackfire='beausimensen-docker-compose exec php_testing blackfire'
+alias beausimensen-test-blackfire-run='beausimensen-test-blackfire run'
+alias beausimensen-test-blackfire-run-php='beausimensen-test-blackfire-run php -d pcov.enabled=0'
+
 # Custom
 alias beausimensen-dusk='beausimensen-test-artisan dusk'
-alias beausimensen-fresh='beausimensen-artisan migrate:fresh'
+alias beausimensen-fresh='beausimensen-artisan migrate:fresh --seed'
 alias beausimensen-test-fresh='beausimensen-artisan migrate:fresh'
 alias beausimensen-ide='beausimensen-artisan ide-helper:generate && \
 beausimensen-artisan ide-helper:models -M && \
