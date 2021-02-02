@@ -121,6 +121,7 @@ mas 'Microsoft Word', id: 462054704
 mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
 mas 'Petrify', id: 1451177988
+mas 'Reeder', id: 1529448980
 mas 'Speedtest', id: 1153157709
 mas 'Spike', id: 707452888
 mas 'ToothFairy', id: 1191449274
