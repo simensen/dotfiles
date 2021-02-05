@@ -7,6 +7,7 @@ DFLYDEV=$CODE/dflydev
 LARAVEL=$CODE/laravel
 SITES=$CODE/sites
 CLIENTS=$CODE/clients
+BLACKFIRE=$CODE/blackfire
 
 pushd () {
     command pushd "$@" > /dev/null
@@ -147,6 +148,13 @@ clone_client() (
     __clone "$ORIGIN" "$CLIENTS/$CLIENT" "$@"
 )
 
+clone_blackfire() (
+    ORIGIN="$1"
+    shift;
+
+    __clone "$ORIGIN" "$BLACKFIRE" "$@"
+)
+
 #
 # Clone a GitHub repo in the appropriate directory
 #
@@ -225,6 +233,12 @@ clone_laravel laravel/laravel simensen
 clone_laravel laravel/vapor-cli simensen
 clone_laravel laravel/vapor-core simensen
 clone_laravel laravel/valet simensen:laravel-valet
+
+
+# Blackfire
+
+clone_blackfire blackfireio/metrics simensen:blackfireio-metrics
+clone_blackfire blackfireio/docs simensen:blackfireio-docs
 
 
 # OSS projects
