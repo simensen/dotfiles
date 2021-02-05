@@ -3,7 +3,7 @@ function webcam {
     uvcc --vendor 1133 --product 2139 set absolute_focus 1
     uvcc --vendor 1133 --product 2139 set absolute_zoom 100
     uvcc --vendor 1133 --product 2139 set auto_white_balance_temperature 0
-    uvcc --vendor 1133 --product 2139 set white_balance_temperature 4200
+    uvcc --vendor 1133 --product 2139 set white_balance_temperature 5600
     uvcc --vendor 1133 --product 2139 set auto_exposure_mode 1
 }
 

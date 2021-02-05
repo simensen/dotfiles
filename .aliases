@@ -9,10 +9,6 @@ alias c="clear"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
-alias library="cd $HOME/Library"
-alias sites="cd $HOME/Code/sites"
-alias dflydev="cd $HOME/Code/dflydev"
-alias clients="cd $HOME/Code/clients"
 
 # PHP
 alias php74="docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint php --rm registry.gitlab.com/grahamcampbell/php:7.4"
