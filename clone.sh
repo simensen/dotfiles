@@ -243,3 +243,4 @@ clone_blackfire blackfireio/docs simensen:blackfireio-docs
 
 # OSS projects
 clone EventSaucePHP/EventSauce simensen
+clone XeroxDev/Stream-Deck-TS-SDK simensen

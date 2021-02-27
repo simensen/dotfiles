@@ -62,6 +62,7 @@ cask 'adobe-creative-cloud'
 cask 'alfred'
 cask 'authy'
 cask 'bartender'
+cask 'sketch'
 cask 'discord'
 cask 'divvy'
 cask 'docker'
@@ -125,7 +126,7 @@ mas 'Petrify', id: 1451177988
 mas 'Reeder', id: 1529448980
 mas 'Speedtest', id: 1153157709
 mas 'Spike', id: 707452888
+mas 'Todoist', id: 585829637
 mas 'ToothFairy', id: 1191449274
 mas 'Trello', id: 1278508951
-mas 'Tweetbot', id: 1384080005
 mas 'Twitter', id: 1482454543
