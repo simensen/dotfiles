@@ -28,5 +28,6 @@ alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias sudo='sudo '
 
 alias traefik-up="( cd ~/Code/traefik-development; docker-compose up -d )"
+alias traefik-down="( cd ~/Code/traefik-development; docker-compose down )"
 
 alias sdplugins="cd ~/Library/Application\ Support/com.elgato.StreamDeck/Plugins/"
