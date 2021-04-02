@@ -1,6 +1,6 @@
-alias prdeploy-rehash='. /Users/simensen/.dotfiles/shell/.projects.d/prdeploy'
+alias prdeploy-rehash='. /Users/simensen/.dotfiles/.projects.d/prdeploy.sh'
 
-alias prdeploy-cd='cd /Users/simensen/Code/prdeploy'
+alias prdeploy-cd='cd /Users/simensen/Code/sites/prdeploy'
 
 # Docker Compose
 function prdeploy-docker-compose() (
@@ -91,7 +91,6 @@ function prdeploy-test-mysql-snapshot-load() (
 
 
 # Custom
-alias prdeploy-dusk='prdeploy-test-artisan dusk'
 alias prdeploy-eslint='npx eslint resources/js'
 alias prdeploy-eslint-fix='npx eslint --fix resources/js'
 alias prdeploy-fresh='prdeploy-artisan migrate:fresh --seed'
