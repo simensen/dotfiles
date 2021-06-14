@@ -205,7 +205,7 @@ clone_site thatpodcast/thatpodcast
 # Clients
 
 clone_site dflydev/app.cpapdropship.com
-clone_site homeownership-wa/whrc-portal dflydev tighten:washington-homeownership-resource-center
+clone_site homeownership-wa/whrc-portal
 
 
 # dflydev tools
