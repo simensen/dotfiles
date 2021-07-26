@@ -3,7 +3,6 @@ function elando () (
 
     CANDIDATE_DIR="$(pwd)"
     while [ -n "$CANDIDATE_DIR" -a "$CANDIDATE_DIR" != '/' ]; do
-        echo "... checking ${CANDIDATE_DIR}"
         if [ -f "${CANDIDATE_DIR}/.elando" ]; then
             break
         fi
@@ -15,5 +14,5 @@ function elando () (
         . "${CANDIDATE_DIR}/.elando"
     fi
 
-    ssh -t "$ELANDO_HOST" "cd $PWD 2>/dev/null && lando "$@" || echo Not in a lando site"
+    ssh -o LogLevel=QUIET -t -t "$ELANDO_HOST" "cd $PWD 2>/dev/null && lando "$@" || echo Not in a lando site"
 )
