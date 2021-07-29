@@ -206,6 +206,8 @@ clone_site thatpodcast/thatpodcast
 
 clone_site dflydev/app.cpapdropship.com
 clone_site homeownership-wa/whrc-portal
+clone_site fandraft/fandraft
+clone_site fandraft/fandraft-node
 
 
 # dflydev tools
