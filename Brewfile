@@ -85,13 +85,13 @@ cask 'droplr'
 cask 'fantastical'
 cask 'firefox'
 cask 'github'
-cask 'google-backup-and-sync'
 cask 'google-chrome'
 cask 'gpg-suite'
 cask 'imageoptim'
 cask 'insomnia'
 cask 'adoptopenjdk8'
 cask 'jetbrains-toolbox'
+cask 'kiwi-for-gmail'
 cask 'loopback'
 cask 'miro'
 cask 'obs'
@@ -103,6 +103,7 @@ cask 'signal'
 cask 'skype'
 cask 'slack'
 cask 'sublime-text'
+cask 'synergy'
 cask 'tableplus'
 cask 'telegram'
 cask 'the-unarchiver'
@@ -136,7 +137,6 @@ mas 'Bear', id: 1091189122
 mas 'Byword', id: 420212497
 mas 'Harvest', id: 506189836
 mas 'Keynote', id: 409183694
-mas 'Kiwi for Gmail', id: 986304488
 mas 'Microsoft Excel', id: 462058435
 mas 'Microsoft Word', id: 462054704
 mas 'Numbers', id: 409203825

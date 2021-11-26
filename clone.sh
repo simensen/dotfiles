@@ -209,6 +209,9 @@ clone_site homeownership-wa/whrc-portal
 clone_site fandraft/fandraft
 clone_site fandraft/fandraft-node
 
+clone_client fandraft fandraft/fandraft
+clone_client fandraft fandraft/fandraft-node
+
 
 # dflydev tools
 

@@ -100,7 +100,7 @@ alias whrc-portal-test-blackfire-run='whrc-portal-test-blackfire run'
 alias whrc-portal-test-blackfire-run-php='whrc-portal-test-blackfire-run php -d pcov.enabled=0'
 
 # Custom
-alias whrc-portal-dusk='whrc-portal-test-artisan dusk'
+alias whrc-portal-dusk='whrc-portal-test-php artisan dusk --env=testing'
 alias whrc-portal-fresh='whrc-portal-artisan migrate:fresh'
 alias whrc-portal-test-fresh='whrc-portal-test-artisan migrate:fresh'
 alias whrc-portal-ide='whrc-portal-artisan ide-helper:generate && \

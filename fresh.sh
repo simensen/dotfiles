@@ -23,6 +23,8 @@ pecl install memcached imagick
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
 
+composer global require laravel/forge-cli
+
 # Clone Github repositories
 ./clone.sh
 
