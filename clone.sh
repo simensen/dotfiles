@@ -196,6 +196,7 @@ clone_blackfire() (
 
 clone_site dflydev/beausimensen
 clone_site dflydev/dflydev
+clone_site dflydev/dflydev-finite-state-machine
 clone_site dflydev/ninjacraft
 clone_site dflydev/ninjagrl.com
 clone_site dflydev/prdeploy
