@@ -69,4 +69,3 @@ augroup END
 nmap ,ev :tabedit $MYVIMRC<cr>
 nmap ,<space> :nohlsearch<cr>
 
-set verbosefile=filename.txt
