@@ -1,0 +1,12 @@
+function efix-docker-permissions() (
+    echo "Fixing directory ownership"
+    essh_run "sudo find . -type d ! -user vagrant -exec chown vagrant.vagrant {} \; -print"
+    echo "Fixing directory permissions"
+    essh_run "sudo find . -type d ! -perm -777 -exec chmod 777 {} \; -print"
+
+    echo "Fixing file ownership"
+    essh_run "sudo find . -type f ! -user vagrant -exec chown vagrant.vagrant {} \; -print"
+    echo "Fixing file permissions"
+    essh_run "sudo find . -type f ! -perm -644 -exec chmod 644 {} \; -print"
+)
+
