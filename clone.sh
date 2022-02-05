@@ -4,6 +4,7 @@ echo "Cloning repositories..."
 
 CODE=$HOME/Code
 DFLYDEV=$CODE/dflydev
+EVENTSAUCE=$CODE/eventsauce
 LARAVEL=$CODE/laravel
 SITES=$CODE/sites
 CLIENTS=$CODE/clients
@@ -126,6 +127,13 @@ clone_dflydev() (
     __clone "$ORIGIN" "$DFLYDEV" "$@"
 )
 
+clone_eventsauce() (
+    ORIGIN="$1"
+    shift;
+
+    __clone "$ORIGIN" "$EVENTSAUCE" "$@"
+)
+
 clone_laravel() (
     ORIGIN="$1"
     shift;
@@ -196,10 +204,10 @@ clone_blackfire() (
 
 clone_site dflydev/beausimensen
 clone_site dflydev/dflydev
-clone_site dflydev/dflydev-finite-state-machine
 clone_site dflydev/ninjacraft
 clone_site dflydev/ninjagrl.com
 clone_site dflydev/prdeploy
+clone_site dflydev/straymurals
 clone_site thatpodcast/thatpodcast
 
 
@@ -229,6 +237,11 @@ clone_dflydev dflydev/dflydev-fig-cookies simensen
 clone_dflydev dflydev/check-runs-action
 clone_dflydev dflydev/contrail
 clone_dflydev dflydev/dflydev-dot-access-data
+clone_dflydev dflydev/dflydev-fig-cookies
+clone_dflydev dflydev/dflydev-finite-state-machine
+clone_dflydev dflydev/dflydev-placeholder-resolver
+clone_dflydev dflydev/prdeploy-example
+clone_dflydev dflydev/typer
 
 
 # Laravel
@@ -236,9 +249,9 @@ clone_dflydev dflydev/dflydev-dot-access-data
 clone_laravel laravel/docs simensen:laravel-docs
 clone_laravel laravel/framework simensen:laravel-framework
 clone_laravel laravel/laravel simensen
+clone_laravel laravel/valet simensen:laravel-valet
 clone_laravel laravel/vapor-cli simensen
 clone_laravel laravel/vapor-core simensen
-clone_laravel laravel/valet simensen:laravel-valet
 
 
 # Blackfire
@@ -247,6 +260,10 @@ clone_blackfire blackfireio/metrics simensen:blackfireio-metrics
 clone_blackfire blackfireio/docs simensen:blackfireio-docs
 
 
+# EventSauce
+clone_eventsauce EventSaucePHP/EventSauce simensen
+clone_eventsauce EventSaucePHP/MessageRepository simensen
+
 # OSS projects
-clone EventSaucePHP/EventSauce simensen
 clone XeroxDev/Stream-Deck-TS-SDK simensen
+clone probot/smee-client simensen

@@ -71,3 +71,7 @@ auth.json
 
 # Ignore act configuration
 .actrc
+
+# TypeScript
+*.tsbuildinfo
+

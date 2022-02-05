@@ -11,6 +11,10 @@ tap 'stripe/stripe-cli'
 brew 'awscli'
 brew 'bash' # Latest Bash version
 brew 'coreutils' # Those that come with macOS are outdated
+brew 'cmake'
+brew 'dnsmasq'
+brew 'docker'
+brew 'docker-compose'
 brew 'dos2unix'
 brew 'ffmpeg'
 brew 'gh'
@@ -29,6 +33,8 @@ brew 'packer'
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'pv'
 brew 'sponge'
+brew 'rabbitmq'
+brew 'rabbitmq-c'
 brew 'stripe/stripe-cli/stripe'
 brew 'svn'
 brew 'trash' # Manage the Trash bin
@@ -39,6 +45,7 @@ brew 'colordiff'
 brew 'gnu-sed'
 brew 'gawk'
 brew 'vagrant'
+brew 'wdiff'
 brew 'wget'
 brew 'yq'
 
@@ -55,6 +62,7 @@ brew 'composer'
 brew 'go'
 brew 'imagemagick'
 brew 'libmemcached'
+brew 'lima'
 brew 'memcached'
 brew 'nginx'
 brew 'node'
@@ -80,7 +88,6 @@ cask 'dbngin'
 cask 'sketch'
 cask 'discord'
 cask 'divvy'
-cask 'docker'
 cask 'dropbox'
 cask 'droplr'
 cask 'fantastical'
@@ -97,10 +104,10 @@ cask 'loopback'
 cask 'miro'
 cask 'obs'
 cask 'openvpn-connect'
-cask 'parallels'
-cask 'parallels-virtualization-sdk'
+#cask 'parallels'
+#cask 'parallels-virtualization-sdk'
 cask 'send-to-kindle'
-cask 'screenflow'
+#cask 'screenflow'
 cask 'signal'
 cask 'skype'
 cask 'slack'
@@ -121,9 +128,9 @@ cask 'whatsapp'
 cask 'zoom'
 
 # Quicklook
-cask 'qlmarkdown'
-cask 'quicklook-json'
-cask 'quicklook-csv'
+#cask 'qlmarkdown'
+#cask 'quicklook-json'
+#cask 'quicklook-csv'
 
 # Fonts
 cask 'font-inter'
@@ -138,8 +145,10 @@ cask 'font-source-serif'
 # Mac App Store
 mas 'Bear', id: 1091189122
 mas 'Byword', id: 420212497
+mas 'Droplr', id: 498672703
 mas 'Harvest', id: 506189836
 mas 'Keynote', id: 409183694
+mas 'Kiwi for Gmail', id: 986304488
 mas 'Microsoft Excel', id: 462058435
 mas 'Microsoft Word', id: 462054704
 mas 'Numbers', id: 409203825
