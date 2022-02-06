@@ -7,6 +7,6 @@ function efix-docker-permissions() (
     echo "Fixing file ownership"
     essh_run "sudo find . -type f ! -user vagrant -exec chown vagrant.vagrant {} \; -print"
     echo "Fixing file permissions"
-    essh_run "sudo find . -type f ! -perm -644 -exec chmod 644 {} \; -print"
+    essh_run "sudo find . -type f ! -perm -666 -exec chmod 666 {} \; -print"
 )
 
