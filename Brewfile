@@ -1,10 +1,11 @@
 # Taps
-tap 'adoptopenjdk/openjdk'
+#tap 'adoptopenjdk/openjdk'
 tap 'homebrew/bundle'
 tap 'homebrew/cask'
 tap 'homebrew/cask-drivers'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
+tap 'mutagen-io/mutagen'
 tap 'stripe/stripe-cli'
 
 # Binaries and Libraries
@@ -44,7 +45,7 @@ brew 'nativefier'
 brew 'colordiff'
 brew 'gnu-sed'
 brew 'gawk'
-brew 'vagrant'
+#brew 'vagrant'
 brew 'wdiff'
 brew 'wget'
 brew 'yq'
@@ -97,6 +98,7 @@ cask 'google-chrome'
 cask 'gpg-suite'
 cask 'imageoptim'
 cask 'insomnia'
+cask 'iterm2'
 cask 'adoptopenjdk8'
 cask 'jetbrains-toolbox'
 cask 'kiwi-for-gmail'
@@ -140,7 +142,7 @@ cask 'font-roboto'
 cask 'font-source-code-pro-for-powerline'
 cask 'font-source-code-pro'
 cask 'font-source-sans-pro'
-cask 'font-source-serif'
+cask 'font-source-serif-pro'
 
 # Mac App Store
 mas 'Bear', id: 1091189122
@@ -156,7 +158,7 @@ mas 'Pages', id: 409201541
 mas 'Petrify', id: 1451177988
 mas 'Reeder', id: 1529448980
 mas 'Speedtest', id: 1153157709
-mas 'Spike', id: 707452888
+#mas 'Spike', id: 707452888
 mas 'Todoist', id: 585829637
 mas 'ToothFairy', id: 1191449274
 mas 'Trello', id: 1278508951
