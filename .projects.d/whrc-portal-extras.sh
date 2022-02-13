@@ -19,5 +19,5 @@ alias whrc-portal-snap-from-current='whrc-portal-mysql-snapshot-create snap'
 alias whrc-portal-snap-from-now='whrc-portal-snap-now && whrc-portal-snap-from-current'
 alias whrc-portal-snap-from-now-no-migrate='whrc-portal-snap-now-no-migrate && whrc-portal-snap-from-current'
 
-alias whrc-portal-snap-from-fresh='whrc-portal-wipe && whrc-portal-fresh --seed && whrc-portal-snap-from-current'
-alias whrc-portal-snap-from-fresh-seeded='whrc-portal-wipe whrc-portal-fresh --seed && whrc-portal-snap-from-current'
+alias whrc-portal-snap-from-fresh='whrc-portal-wipe && whrc-portal-fresh && whrc-portal-snap-from-current'
+alias whrc-portal-snap-from-fresh-seeded='whrc-portal-wipe && whrc-portal-fresh --seed && whrc-portal-snap-from-current'
