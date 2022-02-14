@@ -817,6 +817,11 @@ defaults write com.twitter.twitter-mac HideInBackground -bool true
 # Bypass the annoyingly slow t.co URL shortener
 defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
 
+sqlite3 ~/Library/"Application Support"/Dock/desktoppicture.db << EOF
+UPDATE data SET value = "/System/Library/Desktop Pictures/Solid Colors/Black.png" WHERE value LIKE '%.png';
+.quit
+EOF
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
