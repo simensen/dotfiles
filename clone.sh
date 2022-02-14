@@ -262,7 +262,7 @@ clone_blackfire blackfireio/docs simensen:blackfireio-docs
 
 # EventSauce
 clone_eventsauce EventSaucePHP/EventSauce simensen
-clone_eventsauce EventSaucePHP/MessageRepository simensen
+clone_eventsauce EventSaucePHP/MessageStorage simensen
 
 # OSS projects
 clone XeroxDev/Stream-Deck-TS-SDK simensen

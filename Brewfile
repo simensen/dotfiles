@@ -9,6 +9,8 @@ tap 'mutagen-io/mutagen'
 tap 'stripe/stripe-cli'
 
 # Binaries and Libraries
+brew 'autoconf'
+brew 'automake'
 brew 'awscli'
 brew 'bash' # Latest Bash version
 brew 'coreutils' # Those that come with macOS are outdated
@@ -25,6 +27,7 @@ brew 'grep'
 brew 'httpie'
 brew 'hub'
 brew 'jq'
+brew 'libtool'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'mosh'
