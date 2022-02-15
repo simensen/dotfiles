@@ -89,7 +89,6 @@ cask 'authy'
 cask 'bartender'
 cask 'clockify'
 cask 'dbngin'
-cask 'sketch'
 cask 'discord'
 cask 'divvy'
 cask 'dropbox'
@@ -99,6 +98,7 @@ cask 'firefox'
 cask 'github'
 cask 'google-chrome'
 cask 'gpg-suite'
+cask 'grammarly'
 cask 'imageoptim'
 cask 'insomnia'
 cask 'iterm2'
@@ -115,6 +115,7 @@ cask 'send-to-kindle'
 #cask 'screenflow'
 cask 'shortcutdetective'
 cask 'signal'
+cask 'sketch'
 cask 'skype'
 cask 'slack'
 cask 'sublime-text'
@@ -151,10 +152,10 @@ cask 'font-source-serif-pro'
 # Mac App Store
 mas 'Bear', id: 1091189122
 mas 'Byword', id: 420212497
-mas 'Droplr', id: 498672703
+#mas 'Droplr', id: 498672703
 mas 'Harvest', id: 506189836
 mas 'Keynote', id: 409183694
-mas 'Kiwi for Gmail', id: 986304488
+#mas 'Kiwi for Gmail', id: 986304488
 mas 'Microsoft Excel', id: 462058435
 mas 'Microsoft Word', id: 462054704
 mas 'Numbers', id: 409203825
