@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+mysides add Code file:///Users/simensen/Code
+mysides add Sites file:///Users/simensen/Code/sites
+mysides remove Desktop
+mysides remove Movies
+mysides remove Music

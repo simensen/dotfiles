@@ -50,3 +50,6 @@ ln -s $HOME/.dotfiles/.mackup $HOME/.mackup
 # Set macOS preferences
 # We will run this last because this will reload the shell
 source .macos
+
+# Set up the sidebar the way I like it
+source set-up-sidebar
