@@ -1,8 +1,21 @@
-38c38
+18a19,20
+> SHORT_HOSTNAME="${${$(hostname)%%.*}%-(wired|wifi)}" && echo ${SHORT_HOSTNAME}
+> 
+20,23c22,25
+< #sudo scutil --set ComputerName "0x6D746873"
+< #sudo scutil --set HostName "0x6D746873"
+< #sudo scutil --set LocalHostName "0x6D746873"
+< #sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
+---
+> sudo scutil --set ComputerName "$SHORT_HOSTNAME"
+> sudo scutil --set HostName "$SHORT_HOSTNAME"
+> sudo scutil --set LocalHostName "$SHORT_HOSTNAME"
+> sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$SHORT_HOSTNAME"
+38c40
 < defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 ---
 > defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
-133,136c133,136
+133,136c135,138
 < defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
 < defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
 < defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
@@ -12,17 +25,17 @@
 > #defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
 > #defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
 > #defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
-139c139
+139c141
 < defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 ---
 > #defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
-158,159c158,159
+158,159c160,161
 < defaults write NSGlobalDomain KeyRepeat -int 1
 < defaults write NSGlobalDomain InitialKeyRepeat -int 10
 ---
 > defaults write NSGlobalDomain KeyRepeat -int 5
 > defaults write NSGlobalDomain InitialKeyRepeat -int 25
-164,167c164,167
+164,167c166,169
 < defaults write NSGlobalDomain AppleLanguages -array "en" "nl"
 < defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=EUR"
 < defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
@@ -32,57 +45,57 @@
 > defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
 > defaults write NSGlobalDomain AppleMeasurementUnits -string "Inches"
 > defaults write NSGlobalDomain AppleMetricUnits -bool false
-173c173
+173c175
 < sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
 ---
 > sudo systemsetup -settimezone "America/Chicago" > /dev/null
-255,256c255,256
+255,256c257,258
 < defaults write com.apple.finder NewWindowTarget -string "PfDe"
 < defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
 ---
 > defaults write com.apple.finder NewWindowTarget -string "PfLo"
 > defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
-378c378,379
+378c380,381
 < defaults write com.apple.dock show-process-indicators -bool true
 ---
 > #defaults write com.apple.dock show-process-indicators -bool true
 > defaults write com.apple.dock show-process-indicators -bool false
-383a385
+383a387
 > defaults write com.apple.dock persistent-apps -array
-386c388
+386c390
 < #defaults write com.apple.dock static-only -bool true
 ---
 > defaults write com.apple.dock static-only -bool true
-408c410,411
+408c412,413
 < defaults write com.apple.dock autohide-delay -float 0
 ---
 > #defaults write com.apple.dock autohide-delay -float 0
 > defaults write com.apple.dock autohide-delay -float 60 # this is in seconds
-422a426
+422a428
 > defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
-434c438
+434c440
 < #defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
 ---
 > defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
-450,451c454,455
+450,451c456,457
 < defaults write com.apple.dock wvous-tl-corner -int 2
 < defaults write com.apple.dock wvous-tl-modifier -int 0
 ---
 > #defaults write com.apple.dock wvous-tl-corner -int 2
 > #defaults write com.apple.dock wvous-tl-modifier -int 0
-453,454c457,458
+453,454c459,460
 < defaults write com.apple.dock wvous-tr-corner -int 4
 < defaults write com.apple.dock wvous-tr-modifier -int 0
 ---
 > #defaults write com.apple.dock wvous-tr-corner -int 4
 > #defaults write com.apple.dock wvous-tr-modifier -int 0
-456,457c460,461
+456,457c462,463
 < defaults write com.apple.dock wvous-bl-corner -int 5
 < defaults write com.apple.dock wvous-bl-modifier -int 0
 ---
 > #defaults write com.apple.dock wvous-bl-corner -int 5
 > #defaults write com.apple.dock wvous-bl-modifier -int 0
-628,674d631
+628,674d633
 < # Use a modified version of the Solarized Dark theme by default in Terminal.app
 < osascript <<EOD
 < 
@@ -130,11 +143,11 @@
 < 
 < EOD
 < 
-687,689d643
+687,689d645
 < # Install the Solarized Dark theme for iTerm
 < open "${HOME}/init/Solarized Dark.itermcolors"
 < 
-802,803c756,759
+802,803c758,761
 < defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 < defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
 ---
@@ -142,7 +155,7 @@
 > # defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
 > defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool true
 > defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool true
-833,891d788
+833,891d790
 < # SizeUp.app                                                                  #
 < ###############################################################################
 < 
@@ -202,11 +215,11 @@
 < defaults write org.m0k.transmission RandomPort -bool true
 < 
 < ###############################################################################
-911c808
+911c810
 < defaults write com.twitter.twitter-mac ShowFullNames -bool true
 ---
 > #defaults write com.twitter.twitter-mac ShowFullNames -bool true
-922a820,824
+922a822,826
 > sqlite3 ~/Library/"Application Support"/Dock/desktoppicture.db << EOF
 > UPDATE data SET value = "/System/Library/Desktop Pictures/Solid Colors/Black.png" WHERE value LIKE '%.png';
 > .quit
