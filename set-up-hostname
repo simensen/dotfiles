@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+FALLBACK_HOSTNAME="$(hostname)"
+ARGUMENT_HOSTNAME="$1"
+TARGET_HOSTNAME="${ARGUMENT_HOSTNAME:=$FALLBACK_HOSTNAME}"
+
+SHORT_HOSTNAME="${TARGET_HOSTNAME%%.*}" && echo "$SHORT_HOSTNAME"
+SHORT_HOSTNAME="${SHORT_HOSTNAME%-wired}" && echo "$SHORT_HOSTNAME"
+SHORT_HOSTNAME="${SHORT_HOSTNAME%-wifi}" && echo "$SHORT_HOSTNAME"
+
+# Set computer name (as done via System Preferences → Sharing)
+sudo scutil --set ComputerName "$SHORT_HOSTNAME"
+sudo scutil --set HostName "$SHORT_HOSTNAME"
+sudo scutil --set LocalHostName "$SHORT_HOSTNAME"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$SHORT_HOSTNAME"

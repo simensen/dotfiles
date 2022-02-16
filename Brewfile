@@ -152,7 +152,7 @@ cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 
 # Mac App Store
-mas 'Bear', id: 1091189122
+#mas 'Bear', id: 1091189122
 mas 'Byword', id: 420212497
 #mas 'Droplr', id: 498672703
 mas 'Harvest', id: 506189836

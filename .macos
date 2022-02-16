@@ -16,13 +16,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
-SHORT_HOSTNAME="${${$(hostname)%%.*}%-(wired|wifi)}" && echo ${SHORT_HOSTNAME}
-
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "$SHORT_HOSTNAME"
-sudo scutil --set HostName "$SHORT_HOSTNAME"
-sudo scutil --set LocalHostName "$SHORT_HOSTNAME"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$SHORT_HOSTNAME"
+#sudo scutil --set ComputerName "0x6D746873"
+#sudo scutil --set HostName "0x6D746873"
+#sudo scutil --set LocalHostName "0x6D746873"
+#sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "

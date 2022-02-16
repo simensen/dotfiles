@@ -1,16 +1,3 @@
-18a19,20
-> SHORT_HOSTNAME="${${$(hostname)%%.*}%-(wired|wifi)}" && echo ${SHORT_HOSTNAME}
-> 
-20,23c22,25
-< #sudo scutil --set ComputerName "0x6D746873"
-< #sudo scutil --set HostName "0x6D746873"
-< #sudo scutil --set LocalHostName "0x6D746873"
-< #sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
----
-> sudo scutil --set ComputerName "$SHORT_HOSTNAME"
-> sudo scutil --set HostName "$SHORT_HOSTNAME"
-> sudo scutil --set LocalHostName "$SHORT_HOSTNAME"
-> sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$SHORT_HOSTNAME"
 38c40
 < defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 ---
