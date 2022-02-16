@@ -256,8 +256,8 @@ clone_laravel laravel/vapor-core simensen
 
 # Blackfire
 
-clone_blackfire blackfireio/metrics simensen:blackfireio-metrics
-clone_blackfire blackfireio/docs simensen:blackfireio-docs
+#clone_blackfire blackfireio/metrics simensen:blackfireio-metrics
+#clone_blackfire blackfireio/docs simensen:blackfireio-docs
 
 
 # EventSauce
