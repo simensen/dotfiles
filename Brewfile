@@ -114,6 +114,7 @@ cask 'openphone'
 cask 'openvpn-connect'
 #cask 'parallels'
 #cask 'parallels-virtualization-sdk'
+cask 'rekordbox'
 cask 'send-to-kindle'
 #cask 'screenflow'
 cask 'shortcutdetective'
@@ -157,8 +158,10 @@ cask 'font-source-serif-pro'
 # Mac App Store
 #mas 'Bear', id: 1091189122
 mas 'Byword', id: 420212497
+mas 'Controller', id: 1198176727
 #mas 'Droplr', id: 498672703
 mas 'Harvest', id: 506189836
+mas 'HomeControl', id: 1547121417
 mas 'Keynote', id: 409183694
 #mas 'Kiwi for Gmail', id: 986304488
 mas 'Microsoft Excel', id: 462058435
