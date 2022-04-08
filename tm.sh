@@ -8,5 +8,7 @@ tmutil addexclusion "$(realpath ~/Creative\ Cloud\ Files)"
 tmutil addexclusion "$(realpath ~/Dropbox)"
 tmutil addexclusion "$(realpath ~/Library/Caches)"
 tmutil addexclusion "$(realpath ~/Library/Mobile\ Documents/com\~apple\~CloudDocs)"
+tmutil addexclusion "$(realpath ~/Parallels)"
 tmutil addexclusion "$(realpath ~/Pictures/Photos\ Library.photoslibrary)"
+tmutil addexclusion "$(realpath ~/.vagrant.d)"
 

@@ -36,6 +36,7 @@ brew 'openconnect'
 brew 'packer'
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'pv'
+brew 'pyenv'
 brew 'sponge'
 brew 'rabbitmq'
 brew 'rabbitmq-c'
@@ -96,6 +97,7 @@ cask 'dropbox'
 cask 'droplr'
 cask 'fantastical'
 cask 'firefox'
+cask 'freedom'
 cask 'github'
 cask 'google-chrome'
 cask 'gpg-suite'
@@ -112,8 +114,8 @@ cask 'mysides'
 cask 'obs'
 cask 'openphone'
 cask 'openvpn-connect'
-#cask 'parallels'
-#cask 'parallels-virtualization-sdk'
+cask 'parallels'
+cask 'parallels-virtualization-sdk'
 cask 'rekordbox'
 cask 'send-to-kindle'
 #cask 'screenflow'
@@ -135,6 +137,7 @@ cask 'transmission'
 cask 'transmit'
 cask 'tunnelblick'
 cask 'typora'
+cask 'vagrant'
 cask 'visual-studio-code'
 cask 'vlc'
 cask 'whatsapp'
@@ -160,6 +163,7 @@ cask 'font-source-serif-pro'
 mas 'Byword', id: 420212497
 mas 'Controller', id: 1198176727
 #mas 'Droplr', id: 498672703
+mas 'Focus - Time Management', id: 777233759
 mas 'Harvest', id: 506189836
 mas 'HomeControl', id: 1547121417
 mas 'Keynote', id: 409183694
