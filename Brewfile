@@ -174,6 +174,7 @@ mas 'Keynote', id: 409183694
 #mas 'Kiwi for Gmail', id: 986304488
 mas 'Microsoft Excel', id: 462058435
 mas 'Microsoft Word', id: 462054704
+mas 'MindNode', id: 1289197285
 mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
 mas 'Petrify', id: 1451177988
