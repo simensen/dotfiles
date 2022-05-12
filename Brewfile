@@ -98,6 +98,7 @@ cask 'divvy'
 cask 'dropbox'
 cask 'droplr'
 cask 'fantastical'
+cask 'firealpaca'
 cask 'firefox'
 cask 'freedom'
 cask 'github'
@@ -110,6 +111,7 @@ cask 'iterm2'
 cask 'adoptopenjdk8'
 cask 'jetbrains-toolbox'
 cask 'kiwi-for-gmail'
+cask 'krita'
 cask 'loopback'
 cask 'messenger'
 cask 'miro'
@@ -125,6 +127,7 @@ cask 'send-to-kindle'
 cask 'shortcutdetective'
 cask 'signal'
 cask 'sketch'
+cask 'sketchbook'
 cask 'skype'
 cask 'slack'
 cask 'spotify'
@@ -185,7 +188,9 @@ mas 'Reeder', id: 1529448980
 mas 'Spark – Email App by Readdle', id: 1176895641  
 mas 'Speedtest', id: 1153157709
 #mas 'Spike', id: 707452888
+mas 'Tayasui Sketches', id: 1178074963
 mas 'Todoist', id: 585829637
 mas 'ToothFairy', id: 1191449274
 mas 'Trello', id: 1278508951
 mas 'Twitter', id: 1482454543
+mas 'Vectornator', id: 1219074514
