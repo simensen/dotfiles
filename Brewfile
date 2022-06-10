@@ -5,6 +5,7 @@ tap 'homebrew/cask'
 tap 'homebrew/cask-drivers'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
+tap 'jakehilborn/jakehilborn'
 tap 'mutagen-io/mutagen'
 tap 'stripe/stripe-cli'
 
@@ -15,6 +16,7 @@ brew 'awscli'
 brew 'bash' # Latest Bash version
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'cmake'
+brew 'displayplacer'
 brew 'dnsmasq'
 brew 'docker'
 brew 'docker-compose'
@@ -88,6 +90,7 @@ cask '1password'
 cask '1password-cli'
 cask 'adobe-creative-cloud'
 cask 'alfred'
+cask 'astropad-studio'
 cask 'audio-hijack'
 cask 'authy'
 cask 'bartender'
@@ -176,6 +179,7 @@ cask 'font-source-serif-pro'
 mas 'Byword', id: 420212497
 mas 'Controller', id: 1198176727
 #mas 'Droplr', id: 498672703
+mas 'Eye-Friendly', id: 587769990
 mas 'Focus - Time Management', id: 777233759
 mas 'Harvest', id: 506189836
 mas 'HomeControl', id: 1547121417
