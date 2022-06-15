@@ -186,6 +186,7 @@ mas 'HomeControl', id: 1547121417
 mas 'Keynote', id: 409183694
 #mas 'Kiwi for Gmail', id: 986304488
 mas 'Microsoft Excel', id: 462058435
+mas 'Microsoft PowerPoint', id: 462062816
 mas 'Microsoft Word', id: 462054704
 mas 'MindNode', id: 1289197285
 mas 'Numbers', id: 409203825
