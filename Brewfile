@@ -46,6 +46,7 @@ brew 'pyenv'
 brew 'sponge'
 brew 'rabbitmq'
 brew 'rabbitmq-c'
+brew 'rclone'
 brew 'stripe/stripe-cli/stripe'
 brew 'svn'
 brew 'trash' # Manage the Trash bin
