@@ -62,6 +62,7 @@ brew 'wget'
 brew 'youtube-dl'
 brew 'youtube-dlc'
 brew 'yq'
+brew 'yt-dlp'
 
 # Spatie Medialibrary
 brew 'jpegoptim'
