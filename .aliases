@@ -32,4 +32,10 @@ alias traefik-down="( cd ~/Code/traefik-development; docker-compose down )"
 
 alias sdplugins="cd ~/Library/Application\ Support/com.elgato.StreamDeck/Plugins/"
 
-alias fool="cd ~/Code/fool"
+alias youtube-dl-music="youtube-dl -v -x -f best+bestaudio/best --embed-thumbnail --add-metadata"
+#alias youtube-dl-music-video="youtube-dl -v -f best --embed-thumbnail --add-metadata"
+alias youtube-dl-music-video="youtube-dl -v --merge-output-format mp4 -f 'bestvideo+bestaudio[ext=m4a]/best' --embed-thumbnail --add-metadata"
+
+function youtubedlmusicvideo() {
+    youtube-dl-music "$1" && youtube-dl-music-video "$1"
+}

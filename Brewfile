@@ -10,6 +10,7 @@ tap 'mutagen-io/mutagen'
 tap 'stripe/stripe-cli'
 
 # Binaries and Libraries
+brew 'atomicparsley'
 brew 'autoconf'
 brew 'automake'
 brew 'awscli'
@@ -57,6 +58,8 @@ brew 'gawk'
 #brew 'vagrant'
 brew 'wdiff'
 brew 'wget'
+brew 'youtube-dl'
+brew 'youtube-dlc'
 brew 'yq'
 
 # Spatie Medialibrary
