@@ -152,6 +152,7 @@ clone_client() (
     CLIENT="$1"
     ORIGIN="$2"
     shift;
+    shift;
 
     __clone "$ORIGIN" "$CLIENTS/$CLIENT" "$@"
 )
@@ -221,6 +222,8 @@ clone_site fandraft/fandraft-node
 clone_client fandraft fandraft/fandraft
 clone_client fandraft fandraft/fandraft-node
 
+clone_client whrc homeownership-wa/.github-private
+
 
 # dflydev tools
 
@@ -229,6 +232,7 @@ clone dflydev/traefik-development
 
 # dflydev projects
 
+clone_dflydev dflydev/dflydev-dot-access-configuration simensen
 clone_dflydev dflydev/dflydev-fig-cookies simensen
 
 
@@ -263,6 +267,7 @@ clone_laravel laravel/vapor-core simensen
 # EventSauce
 clone_eventsauce EventSaucePHP/EventSauce simensen
 clone_eventsauce EventSaucePHP/MessageStorage simensen
+clone_eventsauce EventSaucePHP/BackOff simensen
 
 # OSS projects
 clone XeroxDev/Stream-Deck-TS-SDK simensen

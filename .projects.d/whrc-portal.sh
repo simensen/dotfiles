@@ -9,7 +9,6 @@ function whrc-portal-docker-compose() (
     fi
 
     if [ -f ".contrail/docker/docker-compose.override.yaml" ]; then
-        env CONTRAIL_PROJECT_HOME="${CONTRAIL_PROJECT_HOME:-$PWD}" \
         docker-compose $(echo ${DOCKER_COMPOSE_ENV_FILE_OPT}) \
             -p whrc-portal \
             -f .contrail/docker/docker-compose.common.yaml \
@@ -45,6 +44,7 @@ alias whrc-portal-composer='whrc-portal-docker-compose exec php composer'
 alias whrc-portal-php='whrc-portal-docker-compose exec php php'
 alias whrc-portal-composer='whrc-portal-docker-compose exec php composer'
 alias whrc-portal-test-php='whrc-portal-docker-compose exec php_testing php'
+alias whrc-portal-test-shell='whrc-portal-docker-compose exec php_testing bash'
 
 # PHPUnit
 alias whrc-portal-phpunit='whrc-portal-test-php ./vendor/bin/phpunit'
@@ -100,7 +100,7 @@ alias whrc-portal-test-blackfire-run='whrc-portal-test-blackfire run'
 alias whrc-portal-test-blackfire-run-php='whrc-portal-test-blackfire-run php -d pcov.enabled=0'
 
 # Custom
-alias whrc-portal-dusk='whrc-portal-test-php artisan dusk --env=testing'
+alias whrc-portal-dusk='whrc-portal-test-php artisan dusk'
 alias whrc-portal-fresh='whrc-portal-artisan migrate:fresh'
 alias whrc-portal-test-fresh='whrc-portal-test-artisan migrate:fresh'
 alias whrc-portal-ide='whrc-portal-artisan ide-helper:generate && \

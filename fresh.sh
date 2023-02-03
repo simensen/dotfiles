@@ -56,3 +56,6 @@ source set-up-hostname
 
 # Set up the sidebar the way I like it
 source set-up-sidebar
+
+# Set up bin
+source set-up-bin

@@ -644,6 +644,10 @@ defaults write com.apple.Terminal ShowLineMarks -int 0
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
+# Allow windows to be resized to specific sizes and not limited
+# in any way to the size of characters.
+defaults write com.googlecode.iterm2 DisableWindowSizeSnap -integer 1
+
 ###############################################################################
 # Time Machine                                                                #
 ###############################################################################
@@ -817,10 +821,19 @@ defaults write com.twitter.twitter-mac HideInBackground -bool true
 # Bypass the annoyingly slow t.co URL shortener
 defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
 
-sqlite3 ~/Library/"Application Support"/Dock/desktoppicture.db << EOF
-UPDATE data SET value = "/System/Library/Desktop Pictures/Solid Colors/Black.png" WHERE value LIKE '%.png';
-.quit
-EOF
+#sqlite3 ~/Library/"Application Support"/Dock/desktoppicture.db << EOF
+#UPDATE data SET value = "/System/Library/Desktop Pictures/Solid Colors/Black.png" WHERE value LIKE '%.png';
+#.quit
+#EOF
+
+###############################################################################
+# Tweetbot.app                                                                #
+###############################################################################
+
+defaults write com.knollsoft.Hookshot snapEdgeMarginTop -int 128
+defaults write com.knollsoft.Hookshot snapEdgeMarginBottom -int 128
+defaults write com.knollsoft.Hookshot snapEdgeMarginLeft -int 128
+defaults write com.knollsoft.Hookshot snapEdgeMarginRight -int 128
 
 ###############################################################################
 # Kill affected applications                                                  #
