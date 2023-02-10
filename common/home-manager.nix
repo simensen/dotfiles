@@ -12,24 +12,29 @@
   htop.enable = true;
   jq.enable = true;
 
+  powerline-go.enable = true;
 
-  #zsh.dirHashes = {
-  #  code = "$HOME/State/Projects/Code";
-  #  nixos-config = "$HOME/State/Projects/Code/nixos-config";
-  #};
 
-  #zsh.plugins = [
-  #  {
-  #      name = "powerlevel10k";
-  #      src = pkgs.zsh-powerlevel10k;
-  #      file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-  #  }
-  #  {
-  #      name = "powerlevel10k-config";
-  #      src = lib.cleanSource ./config;
-  #      file = "p10k.zsh";
-  #  }
-  #];
+  zsh.dirHashes = {
+    code = "$HOME/Code";
+  };
+
+  zsh.oh-my-zsh = {
+    enable = true;
+  };
+
+  zsh.plugins = [
+    {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+    }
+    {
+        name = "powerlevel10k-config";
+        src = lib.cleanSource ./config;
+        file = "p10k.zsh";
+    }
+  ];
 
   zsh.initExtraFirst = ''
     if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
@@ -49,37 +54,9 @@
     # Remove history data we don't want to see
     export HISTIGNORE="pwd:ls:cd"
 
-    # Emacs is my editor
-    #export ALTERNATE_EDITOR=""
-    #export EDITOR="emacsclient -t"
-    #export VISUAL="emacsclient -c -a emacs"
-    #alias e='emacsclient -t'
-
-    # Enter nix-shell
-    #alias s="nix-shell '<nixpkgs>' -A $1"
-
-    # pnpm is a javascript package manager
-    #alias pn=pnpm
-
-    # Local global npm packages
-    #alias yarn=$HOME/.npm-new-global/bin/yarn
-
-    # bat all the things
-    #alias cat=bat
-
-    # Use difftastic, syntax-aware diffing
-    #alias diff=difft
-
-    # Always color ls and group directories
-    alias ls='ls --group-directories-first --color --human-readable --sort=ext'
-
-    # Weather report in your terminal
-    #alias weather='curl http://wttr.in'
-
-    # Some useful docker commands
-    #alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
-    #alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
-
+    export ALTERNATE_EDITOR=""
+    export EDITOR="vim"
+    #export VISUAL="vim"
     '';
 
   bat = {
@@ -100,6 +77,7 @@
         autocrlf = "input";
         safecrlf = false;
       };
+      color.status.untracked = "white normal";
     };
     difftastic = {
       enable = true;
