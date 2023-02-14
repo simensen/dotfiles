@@ -16,10 +16,12 @@ with pkgs; [
   nebula
   nodePackages.npm
   nodejs
+  powerline-fonts
   sqlite
   tree
   unrar
   unzip
   wget
   zip
+  zsh-git-prompt
 ]

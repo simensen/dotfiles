@@ -2,6 +2,7 @@
 
 let
   common-programs = import ../common/home-manager.nix { config = config; pkgs = pkgs; lib = lib; };
+  home-manager-real = import ../common/home-manager-real.nix { config = config; pkgs = pkgs; lib = lib; };
 in
 {
   imports = [
@@ -91,6 +92,7 @@ in
       home.stateVersion = "23.05";
 
       programs = common-programs // {};
+      home.file = home-manager-real // {};
 
       # https://github.com/nix-community/home-manager/issues/3344
       # Marked broken Oct 20th, check later to remove this

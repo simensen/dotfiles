@@ -6,6 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     darwin = {
       url = "github:LnL7/nix-darwin/master";
@@ -14,7 +15,6 @@
   };
 
   outputs = { self, darwin, home-manager, nixpkgs, ... }@inputs: {
-
     # My Macbook Pro 16"
     darwinConfigurations = {
       "Beaus-m2max-MBP" = darwin.lib.darwinSystem {

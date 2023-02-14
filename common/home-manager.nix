@@ -12,28 +12,33 @@
   htop.enable = true;
   jq.enable = true;
 
-  powerline-go.enable = true;
+  #powerline-go.enable = true;
 
+  #file.".oh-my-zsh/themes/minimal.zsh-theme".source = "./config/minimal/minimal.zsh";
 
   zsh.dirHashes = {
-    code = "$HOME/Code";
+    Code = "$HOME/Code";
+    sites = "$HOME/Code/sites";
   };
 
   zsh.oh-my-zsh = {
     enable = true;
+    theme = "minimal";
+    custom = "$HOME/.oh-my-zsh";
   };
 
+
   zsh.plugins = [
-    {
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-    }
-    {
-        name = "powerlevel10k-config";
-        src = lib.cleanSource ./config;
-        file = "p10k.zsh";
-    }
+#    {
+#        name = "powerlevel10k";
+#        src = pkgs.zsh-powerlevel10k;
+#        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+#    }
+#    {
+#        name = "powerlevel10k-config";
+#        src = lib.cleanSource ./config;
+#        file = "p10k.zsh";
+#    }
   ];
 
   zsh.initExtraFirst = ''
@@ -57,6 +62,35 @@
     export ALTERNATE_EDITOR=""
     export EDITOR="vim"
     #export VISUAL="vim"
+
+    if [[ -f "${pkgs.zsh-git-prompt}/share/zsh-git-prompt/zshrc.sh" ]]; then
+      . "${pkgs.zsh-git-prompt}/share/zsh-git-prompt/zshrc.sh"
+    fi
+
+    export MNML_PROMPT=(mnml_status 'mnml_cwd 6 0' git_super_status mnml_keymap)
+    export MNML_RPROMPT=()
+    #export MNML_MAGICENTER=(mnml_git)
+    export MNML_MAGICENTER=()
+    '';
+
+  zsh.initExtra = ''
+
+    export ZSH_THEME_GIT_PROMPT_PREFIX=""
+    export ZSH_THEME_GIT_PROMPT_SUFFIX=""
+    export ZSH_THEME_GIT_PROMPT_SEPARATOR=" "
+
+    #ZSH_THEME_GIT_PROMPT_PREFIX="("
+    #ZSH_THEME_GIT_PROMPT_SUFFIX=")"
+    #ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+    ZSH_THEME_GIT_PROMPT_BRANCH="\ue0a0%{$fg_bold[magenta]%}"
+    ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}%{●%G%}"
+    ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{✖%G%}"
+    ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[red]%}%{✚%G%}"
+    ZSH_THEME_GIT_PROMPT_BEHIND="%{↓%G%}"
+    ZSH_THEME_GIT_PROMPT_AHEAD="%{↑%G%}"
+    ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[white]%}%{…%G%}"
+    ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
+
     '';
 
   bat = {
