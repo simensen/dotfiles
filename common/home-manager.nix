@@ -19,6 +19,10 @@
   zsh.dirHashes = {
     Code = "$HOME/Code";
     sites = "$HOME/Code/sites";
+    whrc-portal = "$HOME/Code/sites/whrc-portal";
+    "prdeploy.com" = "$HOME/Code/sites/prdeploy";
+    "dflydev.com" = "$HOME/Code/sites/dflydev";
+    "beausimensen.com" = "$HOME/Code/sites/beausimensen";
   };
 
   zsh.oh-my-zsh = {
