@@ -72,6 +72,9 @@ in
     "Focus - Time Management" = 777233759;
     "GoodNotes 5" = 1444383602;
     "HomeControl" = 1547121417;
+    "Microsoft Excel" = 462058435;
+    "Microsoft PowerPoint" = 462062816;
+    "Microsoft Word" = 462054704;
     "MindNode" = 1289197285;
     "Petrify" = 1451177988;
     "Reeder" = 1529448980;
