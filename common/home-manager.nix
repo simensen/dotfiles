@@ -94,6 +94,24 @@
     ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[white]%}%{…%G%}"
     ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
 
+    unsetopt nomatch
+
+    for file in ~/.dotfiles/.{exports,aliases,functions}; do
+        [ -r "$file" ] && [ -f "$file" ] && source "$file"
+    done
+
+    for file in ~/.dotfiles-custom/.{exports,aliases,functions,zshrc}; do
+        [ -r "$file" ] && [ -f "$file" ] && source "$file"
+    done
+
+    # Load the shell dotfiles, and then some:
+    for file in ~/.dotfiles/.{shellrc,projects}.d/*; do
+        [ -r "$file" ] && [ -f "$file" ] && source "$file"
+    done
+
+    for file in ~/.dotfiles-custom/.{shellrc,projects}.d/*; do
+        [ -r "$file" ] && [ -f "$file" ] && source "$file"
+    done
     '';
 
   bat = {
