@@ -70,10 +70,20 @@
       . "${pkgs.zsh-git-prompt}/share/zsh-git-prompt/zshrc.sh"
     fi
 
+    mnml_time() {
+      echo " %D{%L:%M:%S %p}"
+    }
+
     export MNML_PROMPT=(mnml_status 'mnml_cwd 6 0' git_super_status mnml_keymap)
-    export MNML_RPROMPT=()
-    #export MNML_MAGICENTER=(mnml_git)
+    #export MNML_RPROMPT=()
     export MNML_MAGICENTER=()
+    export MNML_INFOLN=()
+    TMOUT=1
+    TRAPALRM() {
+      zle reset-prompt
+    }
+
+    setopt TRANSIENT_RPROMPT
     '';
 
   zsh.initExtra = ''

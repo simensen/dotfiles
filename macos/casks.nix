@@ -43,7 +43,9 @@
   "wordpresscom"
   "zoom"
 
+  "font-hack-nerd-font"
   "font-inter"
+  "font-jetbrains-mono-nerd-font"
   "font-lato"
   "font-open-sans"
   "font-roboto"
