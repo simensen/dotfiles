@@ -36,6 +36,7 @@
   "timemachineeditor"
   "touch-portal"
   "tuple"
+  "typora"
   "unite"
   "visual-studio-code"
   "warp"
