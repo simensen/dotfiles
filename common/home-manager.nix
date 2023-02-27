@@ -16,6 +16,7 @@
   #file.".oh-my-zsh/themes/minimal.zsh-theme".source = "./config/minimal/minimal.zsh";
 
   zsh.dirHashes = {
+    dotfiles = "$HOME/.dotfiles";
     Code = "$HOME/Code";
     sites = "$HOME/Code/sites";
     whrc-portal = "$HOME/Code/sites/whrc-portal";

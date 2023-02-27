@@ -292,7 +292,7 @@ autoload -U colors && colors
 setopt prompt_subst
 
 PROMPT='$(_mnml_wrap MNML_PROMPT) '
-#RPROMPT='$(_mnml_wrap MNML_RPROMPT)'
+RPROMPT='$(_mnml_wrap MNML_RPROMPT)'
 
 _mnml_bind_widgets
 
