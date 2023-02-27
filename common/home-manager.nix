@@ -76,7 +76,7 @@
     }
 
     export MNML_PROMPT=(mnml_status 'mnml_cwd 6 0' git_super_status mnml_keymap)
-    #export MNML_RPROMPT=()
+    export MNML_RPROMPT=()
     export MNML_MAGICENTER=()
     export MNML_INFOLN=()
     TMOUT=1
