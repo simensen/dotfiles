@@ -28,6 +28,7 @@
   "openphone"
   "oracle-jdk"
   "rectangle-pro"
+  "rekordbox"
   "slack"
   "spotify"
   "superkey"

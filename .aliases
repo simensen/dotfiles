@@ -1,0 +1,50 @@
+# Shortcuts
+alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
+alias reloadshell="source $HOME/.zshrc"
+alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
+alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
+alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
+alias c="clear"
+
+# Directories
+alias dotfiles="cd $DOTFILES"
+
+# PHP
+alias php74='docker run -it -w /data -v "${PWD}:/data:delegated" --rm registry.gitlab.com/grahamcampbell/php:7.4'
+alias php80='docker run -it -w /data -v "${PWD}:/data:delegated" --rm registry.gitlab.com/grahamcampbell/php:8.0'
+alias php81='docker run -it -w /data -v "${PWD}:/data:delegated" --rm registry.gitlab.com/grahamcampbell/php:8.1'
+alias php82='docker run -it -w /data -v "${PWD}:/data:delegated" --rm registry.gitlab.com/grahamcampbell/php:8.2'
+
+alias composer-php74='docker run -it -w /data -v "${PWD}:/data:delegated" --entrypoint composer --rm registry.gitlab.com/grahamcampbell/php:7.4'
+alias composer-php80='docker run -it -w /data -v "${PWD}:/data:delegated" --entrypoint composer --rm registry.gitlab.com/grahamcampbell/php:8.0'
+alias composer-php81='docker run -it -w /data -v "${PWD}:/data:delegated" --entrypoint composer --rm registry.gitlab.com/grahamcampbell/php:8.1'
+alias composer-php82='docker run -it -w /data -v "${PWD}:/data:delegated" --entrypoint composer --rm registry.gitlab.com/grahamcampbell/php:8.2'
+alias composer-php8='docker run -it -w /data -v "${PWD}:/data:delegated" --entrypoint composer -rm registry.gitlab.com/grahamcampbell/php:8.2'
+
+alias composer='docker run -it -w /data -v "${PWD}:/data:delegated" --rm composer:latest'
+
+# Docker
+alias docker-composer="docker-compose"
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Flush Directory Service cache
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+alias traefik-up="( cd ~/Code/traefik-development; docker-compose up -d )"
+alias traefik-down="( cd ~/Code/traefik-development; docker-compose down )"
+
+alias sdplugins="cd ~/Library/Application\ Support/com.elgato.StreamDeck/Plugins/"
+
+alias downloadyoutubemusic="yt-dlp -f 'ba' -S 'aext:m4a,acodec:mp4a' --embed-thumbnail --embed-metadata"
+alias downloadyoutubevideo="yt-dlp -f 'bv+ba/b' -S 'vext:mp4,aext:m4a,vcodec:avc,acodec:mp4a' --embed-thumbnail --embed-metadata"
+
+function downloadyoutubemusicvideo() {
+    downloadyoutubemusic "$1" && downloadyoutubevideo "$1"
+}
