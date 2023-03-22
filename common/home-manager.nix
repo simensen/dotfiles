@@ -15,6 +15,9 @@
 
   #file.".oh-my-zsh/themes/minimal.zsh-theme".source = "./config/minimal/minimal.zsh";
 
+  direnv.enable = true;
+  direnv.nix-direnv.enable = true;
+
   zsh.dirHashes = {
     dotfiles = "$HOME/.dotfiles";
     Code = "$HOME/Code";
@@ -153,6 +156,7 @@
   vim = {
     enable = true;
     #plugins = with pkgs.vimPlugins; [ vim-airline vim-airline-themes vim-startify vim-tmux-navigator ];
+    plugins = with pkgs.vimPlugins; [ editorconfig-vim ];
     #settings = { ignorecase = true; };
     extraConfig = ''
       "" General

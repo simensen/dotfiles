@@ -5,6 +5,7 @@
   "Controller" = 1198176727;
   "Focus - Time Management" = 777233759;
   "GoodNotes 5" = 1444383602;
+  "Hologram Desktop" = 1529001798;
   "HomeControl" = 1547121417;
   "Microsoft Excel" = 462058435;
   "Microsoft PowerPoint" = 462062816;

@@ -1,5 +1,8 @@
 alias whrc-portal-extras-rehash='. $HOME/.dotfiles/.projects.d/whrc-portal-extras.sh'
 
+alias whrc-portal-cs='whrc-portal-composer cs'
+alias whrc-portal-lint='whrc-portal-composer lint'
+
 alias whrc-portal-migrate='whrc-portal-artisan migrate'
 
 alias whrc-portal-wipe='whrc-portal-artisan db:wipe'

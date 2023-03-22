@@ -6,6 +6,7 @@ with pkgs; [
   curl
   docker
   docker-compose
+  dos2unix
   glow # CLI markdown viewer
   home-manager
   yq
