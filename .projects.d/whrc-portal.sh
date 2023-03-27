@@ -103,9 +103,7 @@ alias whrc-portal-test-blackfire-run-php='whrc-portal-test-blackfire-run php -d 
 alias whrc-portal-dusk='whrc-portal-test-php artisan dusk --env=testing'
 alias whrc-portal-fresh='whrc-portal-artisan migrate:fresh'
 alias whrc-portal-test-fresh='whrc-portal-test-artisan migrate:fresh'
-alias whrc-portal-ide='whrc-portal-artisan ide-helper:generate && \
-whrc-portal-artisan ide-helper:models -M && \
-whrc-portal-artisan ide-helper:eloquent'
+alias whrc-portal-ide='whrc-portal-composer ide'
 alias whrc-portal-phpcbf='whrc-portal-php vendor/bin/phpcbf'
 alias whrc-portal-phpcs='whrc-portal-php vendor/bin/phpcs'
 alias whrc-portal-psalm='whrc-portal-php vendor/bin/psalm'
