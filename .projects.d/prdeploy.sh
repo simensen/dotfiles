@@ -58,10 +58,10 @@ alias prdeploy-tinker='prdeploy-artisan tinker'
 alias prdeploy-test-artisan='prdeploy-test-php artisan --env=testing'
 
 # MySQL
-alias prdeploy-mysql='prdeploy-docker-compose exec -e MYSQL_PWD=password php mysql -h mysql -uprdeploy prdeploy'
-alias prdeploy-mysqldump='prdeploy-docker-compose exec -e MYSQL_PWD=password php mysqldump -h mysql -uprdeploy prdeploy'
-alias prdeploy-test-mysql='prdeploy-docker-compose exec -e MYSQL_PWD=password php_testing mysql -h mysql_testing -uprdeploy prdeploy'
-alias prdeploy-test-mysqldump='prdeploy-docker-compose exec -e MYSQL_PWD=password php_testing mysqldump -h mysql_testing -uprdeploy prdeploy'
+alias prdeploy-mysql='prdeploy-docker-compose exec -e MYSQL_PWD=password mysql mysql -h mysql -uprdeploy prdeploy'
+alias prdeploy-mysqldump='prdeploy-docker-compose exec -e MYSQL_PWD=password mysql mysqldump -h mysql -uprdeploy prdeploy'
+alias prdeploy-test-mysql='prdeploy-docker-compose exec -e MYSQL_PWD=password mysql_testing mysql -h mysql_testing -uprdeploy prdeploy'
+alias prdeploy-test-mysqldump='prdeploy-docker-compose exec -e MYSQL_PWD=password mysql_testing mysqldump -h mysql_testing -uprdeploy prdeploy'
 
 function prdeploy-mysql-snapshot-create() (
     SNAPSHOT="$1"
@@ -90,14 +90,20 @@ function prdeploy-test-mysql-snapshot-load() (
 )
 
 
+# blackfire
+alias prdeploy-blackfire='prdeploy-docker-compose exec php blackfire'
+alias prdeploy-blackfire-run='prdeploy-blackfire run'
+alias prdeploy-blackfire-run-php='prdeploy-blackfire-run php -d pcov.enabled=0'
+alias prdeploy-blackfire-curl='prdeploy-blackfire curl'
+alias prdeploy-test-blackfire='prdeploy-docker-compose exec php_testing blackfire'
+alias prdeploy-test-blackfire-run='prdeploy-test-blackfire run'
+alias prdeploy-test-blackfire-run-php='prdeploy-test-blackfire-run php -d pcov.enabled=0'
+
 # Custom
-alias prdeploy-eslint='npx eslint resources/js'
-alias prdeploy-eslint-fix='npx eslint --fix resources/js'
-alias prdeploy-fresh='prdeploy-artisan migrate:fresh --seed'
-alias prdeploy-test-fresh='prdeploy-artisan migrate:fresh'
-alias prdeploy-ide='prdeploy-artisan ide-helper:generate -H && \
-prdeploy-artisan ide-helper:models -M && \
-prdeploy-artisan ide-helper:eloquent'
+alias prdeploy-dusk='prdeploy-test-php artisan dusk --env=testing'
+alias prdeploy-fresh='prdeploy-artisan migrate:fresh'
+alias prdeploy-test-fresh='prdeploy-test-artisan migrate:fresh'
+alias prdeploy-ide='prdeploy-composer ide'
 alias prdeploy-phpcbf='prdeploy-php vendor/bin/phpcbf'
 alias prdeploy-phpcs='prdeploy-php vendor/bin/phpcs'
 alias prdeploy-psalm='prdeploy-php vendor/bin/psalm'
