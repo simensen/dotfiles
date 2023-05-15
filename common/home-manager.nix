@@ -141,7 +141,7 @@
     extraConfig = {
       init.defaultBranch = "main";
       core = { 
-        excludesfile = "~/.gitignore_global";
+        #excludesfile = "~/.gitignore_global";
         editor = "vim";
         autocrlf = "input";
         safecrlf = false;
@@ -151,6 +151,84 @@
     difftastic = {
       enable = true;
     };
+    ignores = [
+      "# Compiled source #""
+      "###################"
+      "*.com"
+      "*.class"
+      "*.dll"
+      "*.exe"
+      "*.o"
+      "*.so"
+      ""
+      "# Packages #"
+      "############"
+      "# it's better to unpack these files and commit the raw source"
+      "# git has its own built in compression methods"
+      "*.7z"
+      "*.dmg"
+      "*.gz"
+      "*.iso"
+      "*.jar"
+      "*.rar"
+      "*.tar"
+      "*.zip"
+      ""
+      "# Logs and databases #"
+      "######################"
+      "*.log"
+      "*.sql"
+      "*.sqlite"
+      ""
+      "# OS generated files #"
+      "######################"
+      ".DS_Store"
+      ".DS_Store?"
+      "._*"
+      ".Spotlight-V100"
+      ".Trashes"
+      "ehthumbs.db"
+      "Thumbs.db"
+      ""
+      "#"
+      "#######"
+      ""
+      "# Vim"
+      ".*.sw?"
+      ""
+      "# PhpStorm"
+      ".idea"
+      "_ide_helper.php"
+      "_ide_helper_models.php"
+      ".phpstorm.meta.php"
+      ""
+      "# vs code"
+      ".vscode"
+      ""
+      "# Sublime Text"
+      "*.sublime-project"
+      ""
+      "# Node"
+      "node_modules"
+      "npm-debug.log"
+      "yarn-error.log"
+      ".phpunit-watcher-cache.php"
+      ""
+      "# phpunit"
+      ".phpunit.result.cache"
+      ""
+      "# composer"
+      "auth.json"
+      ""
+      "# Ignore Beau's env files"
+      ".env.beau"
+      ""
+      "# Ignore act configuration"
+      ".actrc"
+      ""
+      "# TypeScript"
+      "*.tsbuildinfo"
+    ];
   };
 
   vim = {
