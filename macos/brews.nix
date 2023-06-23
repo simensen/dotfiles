@@ -2,4 +2,5 @@
 
 [
   "asimov"
+  "mpv"
 ]
