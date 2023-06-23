@@ -12,9 +12,9 @@ CLEAR='\033[0m'
 
 build() {
     if [ "$(uname)" == "Darwin" ]; then
-       ./bin/darwin-build $@
+       ./bin/darwin-build --show-trace $@
     elif [ "$(uname)" == "Linux" ]; then
-       ./bin/nixos-build $@
+       ./bin/nixos-build --show-trace $@
     else
        echo "Unknown platform"
     fi
