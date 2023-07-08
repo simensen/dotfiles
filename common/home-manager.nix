@@ -228,6 +228,12 @@
       ""
       "# TypeScript"
       "*.tsbuildinfo"
+      ""
+      "# Weird docker artifacts"
+      ".bash_history"
+      ".composer"
+      ".config"
+      ".subversion"
     ];
   };
 
