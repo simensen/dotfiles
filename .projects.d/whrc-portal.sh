@@ -1,6 +1,7 @@
 alias whrc-portal-rehash='. $HOME/.dotfiles/.projects.d/whrc-portal.sh'
 
 alias whrc-portal-cd='cd $HOME/Code/sites/whrc-portal'
+alias whrc-portal-project-root='echo $HOME/Code/sites/whrc-portal'
 
 # Docker Compose
 function whrc-portal-docker-compose() (

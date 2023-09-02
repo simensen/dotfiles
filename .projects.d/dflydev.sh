@@ -1,6 +1,7 @@
 alias dflydev-rehash='. $HOME/.dotfiles/.projects.d/dflydev'
 
 alias dflydev-cd='cd $HOME/Code/sites/dflydev'
+alias dflydev-project-root='echo $HOME/Code/sites/dflydev'
 
 # Docker Compose
 function dflydev-docker-compose() (

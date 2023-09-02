@@ -1,6 +1,7 @@
 alias prdeploy-rehash='. $HOME/.dotfiles/.projects.d/prdeploy.sh'
 
 alias prdeploy-cd='cd $HOME/Code/sites/prdeploy'
+alias prdeploy-project-root='echo $HOME/Code/sites/prdeploy'
 
 # Docker Compose
 function prdeploy-docker-compose() (
