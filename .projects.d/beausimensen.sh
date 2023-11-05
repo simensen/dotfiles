@@ -1,6 +1,7 @@
 alias beausimensen-rehash='. $HOME/.dotfiles/.projects.d/beausimensen.sh'
 
 alias beausimensen-cd='cd $HOME/Code/sites/beausimensen'
+alias beausimensen-project-root='echo $HOME/Code/sites/beausimensen'
 
 # Docker Compose
 function beausimensen-docker-compose() (
@@ -58,10 +59,10 @@ alias beausimensen-tinker='beausimensen-artisan tinker'
 alias beausimensen-test-artisan='beausimensen-test-php artisan --env=testing'
 
 # MySQL
-alias beausimensen-mysql='beausimensen-docker-compose exec -e MYSQL_PWD=password php mysql -h mysql -ubeausimensen beausimensen'
-alias beausimensen-mysqldump='beausimensen-docker-compose exec -e MYSQL_PWD=password php mysqldump -h mysql -ubeausimensen beausimensen'
-alias beausimensen-test-mysql='beausimensen-docker-compose exec -e MYSQL_PWD=password php_testing mysql -h mysql_testing -ubeausimensen beausimensen'
-alias beausimensen-test-mysqldump='beausimensen-docker-compose exec -e MYSQL_PWD=password php_testing mysqldump -h mysql_testing -ubeausimensen beausimensen'
+alias beausimensen-mysql='beausimensen-docker-compose exec -e MYSQL_PWD=password mysql mysql -h mysql -ubeausimensen beausimensen'
+alias beausimensen-mysqldump='beausimensen-docker-compose exec -e MYSQL_PWD=password mysql mysqldump -h mysql -ubeausimensen beausimensen'
+alias beausimensen-test-mysql='beausimensen-docker-compose exec -e MYSQL_PWD=password mysql_testing mysql -h mysql_testing -ubeausimensen beausimensen'
+alias beausimensen-test-mysqldump='beausimensen-docker-compose exec -e MYSQL_PWD=password mysql_testing mysqldump -h mysql_testing -ubeausimensen beausimensen'
 
 function beausimensen-mysql-snapshot-create() (
     SNAPSHOT="$1"
@@ -100,15 +101,13 @@ alias beausimensen-test-blackfire-run='beausimensen-test-blackfire run'
 alias beausimensen-test-blackfire-run-php='beausimensen-test-blackfire-run php -d pcov.enabled=0'
 
 # Custom
-alias beausimensen-dusk='beausimensen-test-artisan dusk'
-alias beausimensen-fresh='beausimensen-artisan migrate:fresh --seed'
-alias beausimensen-test-fresh='beausimensen-artisan migrate:fresh'
-alias beausimensen-ide='beausimensen-artisan ide-helper:generate && \
-beausimensen-artisan ide-helper:models -M && \
-beausimensen-artisan ide-helper:eloquent'
+alias beausimensen-dusk='beausimensen-test-php artisan dusk --env=testing'
+alias beausimensen-fresh='beausimensen-artisan migrate:fresh'
+alias beausimensen-test-fresh='beausimensen-test-artisan migrate:fresh'
+alias beausimensen-ide='beausimensen-composer ide'
 alias beausimensen-phpcbf='beausimensen-php vendor/bin/phpcbf'
 alias beausimensen-phpcs='beausimensen-php vendor/bin/phpcs'
-alias beausimensen-psalm='beausimensen-php vendor/bin/psalm --no-cache'
+alias beausimensen-psalm='beausimensen-php vendor/bin/psalm'
 alias beausimensen-vapor='beausimensen-php vendor/bin/vapor'
 
 function beausimensen-run {

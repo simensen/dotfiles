@@ -1,4 +1,4 @@
-alias dflydev-rehash='. $HOME/.dotfiles/.projects.d/dflydev'
+alias dflydev-rehash='. $HOME/.dotfiles/.projects.d/dflydev.sh'
 
 alias dflydev-cd='cd $HOME/Code/sites/dflydev'
 alias dflydev-project-root='echo $HOME/Code/sites/dflydev'

@@ -42,6 +42,10 @@ alias whrc-portal-restart='whrc-portal-docker-compose restart'
 alias whrc-portal-shell='whrc-portal-docker-compose exec php bash'
 alias whrc-portal-composer='whrc-portal-docker-compose exec php composer'
 
+# Core (test)
+alias whrc-portal-test-shell='whrc-portal-docker-compose exec php_testing bash'
+alias whrc-portal-test-composer='whrc-portal-docker-compose exec php_testing composer'
+
 # PHP and Composer
 alias whrc-portal-php='whrc-portal-docker-compose exec php php'
 alias whrc-portal-composer='whrc-portal-docker-compose exec php composer'
@@ -50,6 +54,10 @@ alias whrc-portal-test-php='whrc-portal-docker-compose exec php_testing php'
 # PHPUnit
 alias whrc-portal-phpunit='whrc-portal-test-php ./vendor/bin/phpunit'
 alias whrc-portal-phpunit-coverage='whrc-portal-phpunit --coverage-html=public/coverage'
+
+# Pest
+alias whrc-portal-pest='whrc-portal-test-php ./vendor/bin/pest'
+alias whrc-portal-pest-coverage='whrc-portal-pest --coverage-html=public/coverage'
 
 # Laravel
 alias whrc-portal-artisan='whrc-portal-php artisan'
