@@ -42,7 +42,6 @@
   "swiftdefaultappsprefpane"
   "tableplus"
   "timemachineeditor"
-  "touch-portal"
   "transmission"
   "tuple"
   "typora"
